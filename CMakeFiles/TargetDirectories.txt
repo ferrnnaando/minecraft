@@ -1,0 +1,3 @@
+/Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/CMakeFiles/minecraft.dir
+/Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/CMakeFiles/edit_cache.dir
+/Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/CMakeFiles/rebuild_cache.dir
