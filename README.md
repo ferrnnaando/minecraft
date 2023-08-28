@@ -2,7 +2,7 @@
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![SFML Version](https://img.shields.io/badge/SFML-2.5.1-green.svg)](https://www.sfml-dev.org/)
-[![C++ Version](https://img.shields.io/badge/C++-17-blue.svg)](https://en.cppreference.com/w/cpp/20)
+[![C++ Version](https://img.shields.io/badge/C++-20-blue.svg)](https://en.cppreference.com/w/cpp/20)
 
 A simple implementation of a Minecraft-inspired user interface using SFML and C++.
 
