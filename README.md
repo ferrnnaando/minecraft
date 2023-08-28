@@ -24,3 +24,10 @@ This project is a small-scale implementation of a Minecraft-inspired user interf
 ![Main Menu](images/main_menu.png)
 ![Loading Screen](images/loading_screen.png)
 ![Game Screen](images/game_screen.png)
+
+## TODO List
+
+TODO: Please fix the button language image to conserve the aspect ratio on rescaling. Easy.
+TODO: Make your own configurations. Easy.
+TODO: Make your own Escape menu on the game. Easy.
+TODO: Conserve aspect-ratio on window rescaling. Hard.
