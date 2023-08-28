@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Engine/Engine.cpp" "CMakeFiles/minecraft.dir/src/Engine/Engine.cpp.o" "gcc" "CMakeFiles/minecraft.dir/src/Engine/Engine.cpp.o.d"
-  "/Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/main.cpp" "CMakeFiles/minecraft.dir/src/main.cpp.o" "gcc" "CMakeFiles/minecraft.dir/src/main.cpp.o.d"
+  "/Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Engine/Engine.cpp" "CMakeFiles/Minecraft.dir/src/Engine/Engine.cpp.o" "gcc" "CMakeFiles/Minecraft.dir/src/Engine/Engine.cpp.o.d"
+  "/Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/main.cpp" "CMakeFiles/Minecraft.dir/src/main.cpp.o" "gcc" "CMakeFiles/Minecraft.dir/src/main.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

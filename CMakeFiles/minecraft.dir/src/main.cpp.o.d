@@ -1,4 +1,4 @@
-CMakeFiles/minecraft.dir/src/main.cpp.o: \
+CMakeFiles/Minecraft.dir/src/main.cpp.o: \
   /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/main.cpp \
   /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/header.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/iostream \

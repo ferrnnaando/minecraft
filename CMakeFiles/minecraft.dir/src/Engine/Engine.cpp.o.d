@@ -1,4 +1,4 @@
-CMakeFiles/minecraft.dir/src/Engine/Engine.cpp.o: \
+CMakeFiles/Minecraft.dir/src/Engine/Engine.cpp.o: \
   /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Engine/Engine.cpp \
   /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Engine/Engine.h \
   /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Engine/../header.h \

@@ -117,24 +117,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named minecraft
+# Target rules for targets named Minecraft
 
 # Build rule for target.
-minecraft: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 minecraft
-.PHONY : minecraft
+Minecraft: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Minecraft
+.PHONY : Minecraft
 
 # fast build rule for target.
-minecraft/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minecraft.dir/build.make CMakeFiles/minecraft.dir/build
-.PHONY : minecraft/fast
+Minecraft/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Minecraft.dir/build.make CMakeFiles/Minecraft.dir/build
+.PHONY : Minecraft/fast
 
 src/Engine/Engine.o: src/Engine/Engine.cpp.o
 .PHONY : src/Engine/Engine.o
 
 # target to build an object file
 src/Engine/Engine.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minecraft.dir/build.make CMakeFiles/minecraft.dir/src/Engine/Engine.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Minecraft.dir/build.make CMakeFiles/Minecraft.dir/src/Engine/Engine.cpp.o
 .PHONY : src/Engine/Engine.cpp.o
 
 src/Engine/Engine.i: src/Engine/Engine.cpp.i
@@ -142,7 +142,7 @@ src/Engine/Engine.i: src/Engine/Engine.cpp.i
 
 # target to preprocess a source file
 src/Engine/Engine.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minecraft.dir/build.make CMakeFiles/minecraft.dir/src/Engine/Engine.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Minecraft.dir/build.make CMakeFiles/Minecraft.dir/src/Engine/Engine.cpp.i
 .PHONY : src/Engine/Engine.cpp.i
 
 src/Engine/Engine.s: src/Engine/Engine.cpp.s
@@ -150,7 +150,7 @@ src/Engine/Engine.s: src/Engine/Engine.cpp.s
 
 # target to generate assembly for a file
 src/Engine/Engine.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minecraft.dir/build.make CMakeFiles/minecraft.dir/src/Engine/Engine.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Minecraft.dir/build.make CMakeFiles/Minecraft.dir/src/Engine/Engine.cpp.s
 .PHONY : src/Engine/Engine.cpp.s
 
 src/main.o: src/main.cpp.o
@@ -158,7 +158,7 @@ src/main.o: src/main.cpp.o
 
 # target to build an object file
 src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minecraft.dir/build.make CMakeFiles/minecraft.dir/src/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Minecraft.dir/build.make CMakeFiles/Minecraft.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
 src/main.i: src/main.cpp.i
@@ -166,7 +166,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minecraft.dir/build.make CMakeFiles/minecraft.dir/src/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Minecraft.dir/build.make CMakeFiles/Minecraft.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -174,7 +174,7 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minecraft.dir/build.make CMakeFiles/minecraft.dir/src/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Minecraft.dir/build.make CMakeFiles/Minecraft.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
 # Help Target
@@ -185,7 +185,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... minecraft"
+	@echo "... Minecraft"
 	@echo "... src/Engine/Engine.o"
 	@echo "... src/Engine/Engine.i"
 	@echo "... src/Engine/Engine.s"

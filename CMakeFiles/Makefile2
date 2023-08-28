@@ -63,7 +63,7 @@ CMAKE_BINARY_DIR = /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecr
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/minecraft.dir/all
+all: CMakeFiles/Minecraft.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -71,34 +71,34 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/minecraft.dir/clean
+clean: CMakeFiles/Minecraft.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/minecraft.dir
+# Target rules for target CMakeFiles/Minecraft.dir
 
 # All Build rule for target.
-CMakeFiles/minecraft.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minecraft.dir/build.make CMakeFiles/minecraft.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minecraft.dir/build.make CMakeFiles/minecraft.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/CMakeFiles --progress-num=1,2,3 "Built target minecraft"
-.PHONY : CMakeFiles/minecraft.dir/all
+CMakeFiles/Minecraft.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Minecraft.dir/build.make CMakeFiles/Minecraft.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Minecraft.dir/build.make CMakeFiles/Minecraft.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/CMakeFiles --progress-num=1,2,3 "Built target Minecraft"
+.PHONY : CMakeFiles/Minecraft.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/minecraft.dir/rule: cmake_check_build_system
+CMakeFiles/Minecraft.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/CMakeFiles 3
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/minecraft.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Minecraft.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/CMakeFiles 0
-.PHONY : CMakeFiles/minecraft.dir/rule
+.PHONY : CMakeFiles/Minecraft.dir/rule
 
 # Convenience name for target.
-minecraft: CMakeFiles/minecraft.dir/rule
-.PHONY : minecraft
+Minecraft: CMakeFiles/Minecraft.dir/rule
+.PHONY : Minecraft
 
 # clean rule for target.
-CMakeFiles/minecraft.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/minecraft.dir/build.make CMakeFiles/minecraft.dir/clean
-.PHONY : CMakeFiles/minecraft.dir/clean
+CMakeFiles/Minecraft.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Minecraft.dir/build.make CMakeFiles/Minecraft.dir/clean
+.PHONY : CMakeFiles/Minecraft.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

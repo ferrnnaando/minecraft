@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
-set(PROJECT_NAME minecraft)
+set(PROJECT_NAME Minecraft)
 project(${PROJECT_NAME} VERSION 1.0.0 LANGUAGES CXX)
 find_package(OpenGL)
 
