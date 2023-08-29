@@ -6,7 +6,8 @@
 
 A simple implementation of a Minecraft-inspired user interface using SFML and C++.
 
-![Project Banner](images/project_banner.png)
+![image](https://github.com/ferrnnaando/minecraft/assets/77246868/4d64cbb3-d210-49b2-8d25-a3d86986c718)
+
 
 ## Description
 
@@ -21,9 +22,8 @@ This project is a small-scale implementation of a Minecraft-inspired user interf
 
 ## Screenshots
 
-![Main Menu](images/main_menu.png)
-![Loading Screen](images/loading_screen.png)
-![Game Screen](images/game_screen.png)
+![image](https://github.com/ferrnnaando/minecraft/assets/77246868/2833b208-a87a-4fd1-8ca4-1f94f7ecedee)
+
 
 ## TODO List
 
