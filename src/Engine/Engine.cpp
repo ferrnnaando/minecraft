@@ -1,5 +1,6 @@
 #include "Engine.h"
 
+
 std::string Engine::random_message() {
     int random = rand() % 21;
     std::string message;
@@ -61,7 +62,6 @@ Engine::Engine(sf::RenderWindow& window) {
     mWindow->setVisible(true);
     mWindow->setFramerateLimit(60);
     mWindow->setVerticalSyncEnabled(true);
-
     init();
 
     mWindow->setIcon(ico_app.getSize().x, ico_app.getSize().y, ico_app.getPixelsPtr());
@@ -191,21 +191,121 @@ Engine::Engine(sf::RenderWindow& window) {
 }
 
 void Engine::init() {
-    if(!ico_app.loadFromFile("assets/images/icon_app.jpeg")) mWindow->close(); //radical quit
-    //if(!music_1.openFromFile("assets/sounds/C418.mp3")) mWindow->close();
-    if(!sb_click.loadFromFile("assets/sounds/effects/click.mp3")) mWindow->close();
-    if(!c_hand.loadFromSystem(sf::Cursor::Hand)) mWindow->close();
-    if(!c_default.loadFromSystem(sf::Cursor::Arrow)) mWindow->close();
-    if(!t_background_main.loadFromFile("assets/images/background.jpeg")) mWindow->close();
-    if(!t_maintittle.loadFromFile("assets/images/title.png")) mWindow->close();
-    if(!t_copyright_editon.loadFromFile("assets/images/edition_copyright.png")) mWindow->close();
-    if(!t_button.loadFromFile("assets/images/button.jpg")) mWindow->close();
-    if(!t_language_button.loadFromFile("assets/images/language.png")) mWindow->close();
-    if(!f_regular.loadFromFile("assets/fonts/regular.otf")) mWindow->close(); 
-    if(!f_title1.loadFromFile("assets/fonts/title1.ttf")) mWindow->close();
-    if(!t_background_singleplayer_loading.loadFromFile("assets/images/loading_singleplayer.png")) mWindow->close();
-    if(!t_background_settings.loadFromFile("assets/images/settings_screen.png")) mWindow->close();
+    std::vector<sf::Image*> ToLoad_Images = { &ico_app};
+    std::vector<std::string> ImagesPath = { "assets/images/icon_app.jpeg" };
+
+    std::vector<sf::Texture*> ToLoad_Textures = { &t_button, &t_background_main, &t_background_singleplayer_loading, &t_background_settings, &t_maintittle, &t_copyright_editon, &t_button };
+    std::vector<std::string> TexturesPath = { "assets/images/icon_app.jpeg", "assets/images/background.jpeg", "assets/images/loading_singleplayer.png", 
+    "assets/images/settings_screen.png", "assets/images/title.png", "assets/images/edition_copyright.png", "assets/images/button.jpg" };
+
+    std::vector<sf::Font*> ToLoad_Fonts = { &f_regular, &f_title1 };
+    std::vector<std::string> FontsPath = { "assets/fonts/regular.otf", "assets/fonts/title1.ttf" };
+
+    std::vector<sf::Cursor*> ToLoad_Cursor = { &c_default, &c_hand };
+    std::vector<sf::Cursor::Type> CursorPath = { sf::Cursor::Arrow, sf::Cursor::Hand };
+
+    std::vector<sf::SoundBuffer*> ToLoad_Buffer = { &sb_click };
+    std::vector<std::string> BufferPath = { "assets/sounds/effects/click.mp3"};
+
+    std::vector<sf::Music*> ToLoad_Music = { &m_C418 };
+    std::vector<std::string> MusicPath = { "assets/sounds/musics/main_music.mp3" };
+
+    std::vector<std::thread> threads; //what does emplace back
+    std::mutex shared; //what is mutex
+
+    for(int i = 0; i < ToLoad_Images.size(); i++) {
+        threads.emplace_back([&ToLoad_Images, &ImagesPath, i]() {
+            ToLoad_Images[i]->loadFromFile(ImagesPath[i]); //t2
+        });
+    }
+
+    for(int i = 0; i < ToLoad_Textures.size(); i++) {
+        threads.emplace_back([&ToLoad_Textures, &TexturesPath, &shared, i]() {
+            {
+                std::lock_guard<std::mutex> lock(shared);
+                ToLoad_Textures[i]->loadFromFile(TexturesPath[i]);
+            }
+        });
+    }
+
+    for(int i = 0; i < ToLoad_Fonts.size(); i++) {
+        threads.emplace_back([&ToLoad_Fonts, &FontsPath, &shared, i](){
+            {
+                std::lock_guard<std::mutex> lock(shared);
+                ToLoad_Fonts[i]->loadFromFile(FontsPath[i]); //t3
+            }
+        });
+    }
+
+    for(int i = 0; i < ToLoad_Cursor.size(); i++) {
+        threads.emplace_back([&ToLoad_Cursor, &CursorPath, &shared, i](){
+            {
+                std::lock_guard<std::mutex> lock(shared);
+                ToLoad_Cursor[i]->loadFromSystem(CursorPath[i]);
+            }
+        });
+    }
+
+    for(int i = 0; i < ToLoad_Buffer.size(); i++) {
+        threads.emplace_back([&ToLoad_Buffer, &BufferPath, &shared, i](){
+            {
+                std::lock_guard<std::mutex> lock(shared);
+                ToLoad_Buffer[i]->loadFromFile(BufferPath[i]);
+            }
+        });
+    }
+    
+    for(int i = 0; i < ToLoad_Music.size(); i++) {
+        threads.emplace_back([&ToLoad_Music, &MusicPath, &shared, i]() {
+            {
+                std::lock_guard<std::mutex> lock(shared);
+                ToLoad_Music[i]->openFromFile(MusicPath[i]);
+            }
+        });
+    }
+
+    //this simple example are loading all in the same thread  one by-one, not multi-threading
+
+    for(auto& thread : threads) {
+        thread.join();
+    }
+
 }
+
+/*void Engine::init() {
+    //std::map<std::string, load_struct> important_stuff;
+    std::vector<LoadStruct> initPath = {
+        { "assets/images/icon_app.jpeg", std::make_shared<TextureLoad>() }};
+        // { "assets/sounds/C418.mp3", sf::Image() }, 
+        // { "assets/sounds/effects/click.mp3", sf::Image() }, 
+        // { sf::Cursor::Hand, sf::Image() }, 
+        // { sf::Cursor::Arrow, sf::Image() }, 
+        // { "assets/images/background.jpeg", sf::Image() }
+
+    for(int i = 0; i < initPath.size(); i++) {
+        try {
+            initPath[i].var_name.loadFromFile(initPath[i].path);
+        } 
+        catch(std::exception& e) {
+            std::cout << e.what();
+            throw std::runtime_error("Textures wasnt correctly installed/loaded, appears to be corrupt. Please take the time to reinstall the game.");
+        }
+    }
+
+    // //if(!music_1.openFromFile("assets/sounds/C418.mp3")) mWindow->close();
+    // if(!sb_click.loadFromFile("assets/sounds/effects/click.mp3")) mWindow->close();
+    // if(!c_hand.loadFromSystem(sf::Cursor::Hand)) mWindow->close();
+    // if(!c_default.loadFromSystem(sf::Cursor::Arrow)) mWindow->close();
+    // if(!t_background_main.loadFromFile("assets/images/background.jpeg")) mWindow->close();
+    // if(!t_maintittle.loadFromFile("assets/images/title.png")) mWindow->close();
+    // if(!t_copyright_editon.loadFromFile("assets/images/edition_copyright.png")) mWindow->close();
+    // if(!t_button.loadFromFile("assets/images/button.jpg")) mWindow->close();
+    // if(!t_language_button.loadFromFile("assets/images/language.png")) mWindow->close();
+    // if(!f_regular.loadFromFile("assets/fonts/regular.otf")) mWindow->close(); 
+    // if(!f_title1.loadFromFile("assets/fonts/title1.ttf")) mWindow->close();
+    // if(!t_background_singleplayer_loading.loadFromFile("assets/images/loading_singleplayer.png")) mWindow->close();
+    // if(!t_background_settings.loadFromFile("assets/images/settings_screen.png")) mWindow->close();
+}*/
 
 void Engine::processWindowEvents() {
     sf::Event event;

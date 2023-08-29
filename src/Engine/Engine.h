@@ -1,13 +1,14 @@
 #pragma once
 #include "../header.h"
+#include "../BaseResource/BaseResource.h"
 
-class Engine {
+class Engine  {
     public:
         Engine(sf::RenderWindow&);
         void run();
     private:
         sf::RenderWindow* mWindow;
-
+        
         bool mainScreen = true, settingsScreen = false, loadgameScreen = false, gameScreen = false;
         bool lang_en = true, lang_es = false;
 

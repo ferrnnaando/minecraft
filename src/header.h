@@ -4,6 +4,15 @@
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
+#include <thread>
+#include <chrono>
+#include <map>
+#include <vector>
+#include <mutex>
+#include <unordered_map>
+#include <string_view>
+#include <exception>
+#include <stdexcept>
+#include <memory>
 
-extern std::string test44;
 extern "C";

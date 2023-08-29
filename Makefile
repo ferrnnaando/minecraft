@@ -129,6 +129,30 @@ Minecraft/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Minecraft.dir/build.make CMakeFiles/Minecraft.dir/build
 .PHONY : Minecraft/fast
 
+src/BaseResource/BaseResource.o: src/BaseResource/BaseResource.cpp.o
+.PHONY : src/BaseResource/BaseResource.o
+
+# target to build an object file
+src/BaseResource/BaseResource.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Minecraft.dir/build.make CMakeFiles/Minecraft.dir/src/BaseResource/BaseResource.cpp.o
+.PHONY : src/BaseResource/BaseResource.cpp.o
+
+src/BaseResource/BaseResource.i: src/BaseResource/BaseResource.cpp.i
+.PHONY : src/BaseResource/BaseResource.i
+
+# target to preprocess a source file
+src/BaseResource/BaseResource.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Minecraft.dir/build.make CMakeFiles/Minecraft.dir/src/BaseResource/BaseResource.cpp.i
+.PHONY : src/BaseResource/BaseResource.cpp.i
+
+src/BaseResource/BaseResource.s: src/BaseResource/BaseResource.cpp.s
+.PHONY : src/BaseResource/BaseResource.s
+
+# target to generate assembly for a file
+src/BaseResource/BaseResource.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Minecraft.dir/build.make CMakeFiles/Minecraft.dir/src/BaseResource/BaseResource.cpp.s
+.PHONY : src/BaseResource/BaseResource.cpp.s
+
 src/Engine/Engine.o: src/Engine/Engine.cpp.o
 .PHONY : src/Engine/Engine.o
 
@@ -186,6 +210,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Minecraft"
+	@echo "... src/BaseResource/BaseResource.o"
+	@echo "... src/BaseResource/BaseResource.i"
+	@echo "... src/BaseResource/BaseResource.s"
 	@echo "... src/Engine/Engine.o"
 	@echo "... src/Engine/Engine.i"
 	@echo "... src/Engine/Engine.s"

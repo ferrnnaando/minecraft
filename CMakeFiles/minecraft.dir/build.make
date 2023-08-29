@@ -69,10 +69,24 @@ include CMakeFiles/Minecraft.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Minecraft.dir/flags.make
 
+CMakeFiles/Minecraft.dir/src/BaseResource/BaseResource.cpp.o: CMakeFiles/Minecraft.dir/flags.make
+CMakeFiles/Minecraft.dir/src/BaseResource/BaseResource.cpp.o: src/BaseResource/BaseResource.cpp
+CMakeFiles/Minecraft.dir/src/BaseResource/BaseResource.cpp.o: CMakeFiles/Minecraft.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Minecraft.dir/src/BaseResource/BaseResource.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Minecraft.dir/src/BaseResource/BaseResource.cpp.o -MF CMakeFiles/Minecraft.dir/src/BaseResource/BaseResource.cpp.o.d -o CMakeFiles/Minecraft.dir/src/BaseResource/BaseResource.cpp.o -c /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/BaseResource/BaseResource.cpp
+
+CMakeFiles/Minecraft.dir/src/BaseResource/BaseResource.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Minecraft.dir/src/BaseResource/BaseResource.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/BaseResource/BaseResource.cpp > CMakeFiles/Minecraft.dir/src/BaseResource/BaseResource.cpp.i
+
+CMakeFiles/Minecraft.dir/src/BaseResource/BaseResource.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Minecraft.dir/src/BaseResource/BaseResource.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/BaseResource/BaseResource.cpp -o CMakeFiles/Minecraft.dir/src/BaseResource/BaseResource.cpp.s
+
 CMakeFiles/Minecraft.dir/src/Engine/Engine.cpp.o: CMakeFiles/Minecraft.dir/flags.make
 CMakeFiles/Minecraft.dir/src/Engine/Engine.cpp.o: src/Engine/Engine.cpp
 CMakeFiles/Minecraft.dir/src/Engine/Engine.cpp.o: CMakeFiles/Minecraft.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Minecraft.dir/src/Engine/Engine.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Minecraft.dir/src/Engine/Engine.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Minecraft.dir/src/Engine/Engine.cpp.o -MF CMakeFiles/Minecraft.dir/src/Engine/Engine.cpp.o.d -o CMakeFiles/Minecraft.dir/src/Engine/Engine.cpp.o -c /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Engine/Engine.cpp
 
 CMakeFiles/Minecraft.dir/src/Engine/Engine.cpp.i: cmake_force
@@ -86,7 +100,7 @@ CMakeFiles/Minecraft.dir/src/Engine/Engine.cpp.s: cmake_force
 CMakeFiles/Minecraft.dir/src/main.cpp.o: CMakeFiles/Minecraft.dir/flags.make
 CMakeFiles/Minecraft.dir/src/main.cpp.o: src/main.cpp
 CMakeFiles/Minecraft.dir/src/main.cpp.o: CMakeFiles/Minecraft.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Minecraft.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Minecraft.dir/src/main.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Minecraft.dir/src/main.cpp.o -MF CMakeFiles/Minecraft.dir/src/main.cpp.o.d -o CMakeFiles/Minecraft.dir/src/main.cpp.o -c /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/main.cpp
 
 CMakeFiles/Minecraft.dir/src/main.cpp.i: cmake_force
@@ -99,12 +113,14 @@ CMakeFiles/Minecraft.dir/src/main.cpp.s: cmake_force
 
 # Object files for target Minecraft
 Minecraft_OBJECTS = \
+"CMakeFiles/Minecraft.dir/src/BaseResource/BaseResource.cpp.o" \
 "CMakeFiles/Minecraft.dir/src/Engine/Engine.cpp.o" \
 "CMakeFiles/Minecraft.dir/src/main.cpp.o"
 
 # External object files for target Minecraft
 Minecraft_EXTERNAL_OBJECTS =
 
+Minecraft: CMakeFiles/Minecraft.dir/src/BaseResource/BaseResource.cpp.o
 Minecraft: CMakeFiles/Minecraft.dir/src/Engine/Engine.cpp.o
 Minecraft: CMakeFiles/Minecraft.dir/src/main.cpp.o
 Minecraft: CMakeFiles/Minecraft.dir/build.make
@@ -113,7 +129,7 @@ Minecraft: /usr/local/lib/libsfml-audio.2.6.0.dylib
 Minecraft: /usr/local/lib/libsfml-window.2.6.0.dylib
 Minecraft: /usr/local/lib/libsfml-system.2.6.0.dylib
 Minecraft: CMakeFiles/Minecraft.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable Minecraft"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable Minecraft"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Minecraft.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

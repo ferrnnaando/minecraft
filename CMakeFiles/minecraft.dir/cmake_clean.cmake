@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Minecraft.dir/src/BaseResource/BaseResource.cpp.o"
+  "CMakeFiles/Minecraft.dir/src/BaseResource/BaseResource.cpp.o.d"
   "CMakeFiles/Minecraft.dir/src/Engine/Engine.cpp.o"
   "CMakeFiles/Minecraft.dir/src/Engine/Engine.cpp.o.d"
   "CMakeFiles/Minecraft.dir/src/main.cpp.o"
