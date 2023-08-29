@@ -9,7 +9,7 @@ class Engine  {
     private:
         sf::RenderWindow* mWindow;
         
-        bool mainScreen = true, settingsScreen = false, loadgameScreen = false, gameScreen = false;
+         bool mainScreen = true, settingsScreen = false, loading_overworldScreen = false, singleplayerGameScreen = false;
         bool lang_en = true, lang_es = false;
 
         std::string singleplayer_button_text_en = "Singleplayer";
@@ -46,10 +46,14 @@ class Engine  {
         sf::Sprite s_background_singleplayer_loading;
         sf::RectangleShape loadoverworld_total, loadoverwold_process;
         sf::Clock load_clock, enter_game;
-        float totalLoadTime = 5.0f;
+        float totalLoadTime = 0.5f;
         float currentTime = 0.0f;
         sf::Text txt_load_status;
         std::string load_process_info;
+
+
+        //game render
+        sf::RectangleShape terrain_size;
 
         std::string random_message();
         void init();

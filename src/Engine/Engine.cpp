@@ -188,6 +188,15 @@ Engine::Engine(sf::RenderWindow& window) {
     txt_load_status.setPosition(sf::Vector2f(loadoverworld_total.getSize().x / 2 - txt_load_status.getGlobalBounds().width / 2, loadoverworld_total.getGlobalBounds().getPosition().y - 25.0f));
     txt_load_status.setOutlineThickness(1);
     txt_load_status.setOutlineColor(sf::Color(0, 0, 0));
+
+    std::random_device rd;
+    std::mt19937 rng(rd());
+    std::uniform_int_distribution<float> distribution(200.0f, 270.0f);
+    float terrainHeight = distribution(rng);
+
+    terrain_size.setSize(sf::Vector2f(mWindow->getSize().x, terrainHeight));
+    terrain_size.setFillColor(sf::Color::White);
+    terrain_size.setPosition(sf::Vector2f(mWindow->getSize().x - mWindow->getSize().x, mWindow->getSize().y - terrain_size.getGlobalBounds().height));
 }
 
 void Engine::init() {
@@ -214,8 +223,11 @@ void Engine::init() {
     std::mutex shared; //what is mutex
 
     for(int i = 0; i < ToLoad_Images.size(); i++) {
-        threads.emplace_back([&ToLoad_Images, &ImagesPath, i]() {
-            ToLoad_Images[i]->loadFromFile(ImagesPath[i]); //t2
+        threads.emplace_back([&ToLoad_Images, &ImagesPath, &shared, i]() {
+             {
+                std::lock_guard<std::mutex> lock(shared);
+                ToLoad_Images[i]->loadFromFile(ImagesPath[i]);
+            }
         });
     }
 
@@ -264,48 +276,11 @@ void Engine::init() {
         });
     }
 
-    //this simple example are loading all in the same thread  one by-one, not multi-threading
-
     for(auto& thread : threads) {
         thread.join();
     }
 
 }
-
-/*void Engine::init() {
-    //std::map<std::string, load_struct> important_stuff;
-    std::vector<LoadStruct> initPath = {
-        { "assets/images/icon_app.jpeg", std::make_shared<TextureLoad>() }};
-        // { "assets/sounds/C418.mp3", sf::Image() }, 
-        // { "assets/sounds/effects/click.mp3", sf::Image() }, 
-        // { sf::Cursor::Hand, sf::Image() }, 
-        // { sf::Cursor::Arrow, sf::Image() }, 
-        // { "assets/images/background.jpeg", sf::Image() }
-
-    for(int i = 0; i < initPath.size(); i++) {
-        try {
-            initPath[i].var_name.loadFromFile(initPath[i].path);
-        } 
-        catch(std::exception& e) {
-            std::cout << e.what();
-            throw std::runtime_error("Textures wasnt correctly installed/loaded, appears to be corrupt. Please take the time to reinstall the game.");
-        }
-    }
-
-    // //if(!music_1.openFromFile("assets/sounds/C418.mp3")) mWindow->close();
-    // if(!sb_click.loadFromFile("assets/sounds/effects/click.mp3")) mWindow->close();
-    // if(!c_hand.loadFromSystem(sf::Cursor::Hand)) mWindow->close();
-    // if(!c_default.loadFromSystem(sf::Cursor::Arrow)) mWindow->close();
-    // if(!t_background_main.loadFromFile("assets/images/background.jpeg")) mWindow->close();
-    // if(!t_maintittle.loadFromFile("assets/images/title.png")) mWindow->close();
-    // if(!t_copyright_editon.loadFromFile("assets/images/edition_copyright.png")) mWindow->close();
-    // if(!t_button.loadFromFile("assets/images/button.jpg")) mWindow->close();
-    // if(!t_language_button.loadFromFile("assets/images/language.png")) mWindow->close();
-    // if(!f_regular.loadFromFile("assets/fonts/regular.otf")) mWindow->close(); 
-    // if(!f_title1.loadFromFile("assets/fonts/title1.ttf")) mWindow->close();
-    // if(!t_background_singleplayer_loading.loadFromFile("assets/images/loading_singleplayer.png")) mWindow->close();
-    // if(!t_background_settings.loadFromFile("assets/images/settings_screen.png")) mWindow->close();
-}*/
 
 void Engine::processWindowEvents() {
     sf::Event event;
@@ -336,7 +311,10 @@ void Engine::update() {
 
         if(mWindow->hasFocus()) {
             if(mainScreen) {
-                if (s_button_singleplayer.getGlobalBounds().contains(mousePos_relative)) {
+                if(sf::Keyboard::isKeyPressed(sf::Keyboard::Escape) && sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+                    
+                }
+                else if (s_button_singleplayer.getGlobalBounds().contains(mousePos_relative)) {
                     mWindow->setMouseCursor(c_hand);
                     s_button_singleplayer.setColor(buttons_hoverColor);
                     txt_content_singleplayer.setFillColor(sf::Color(254, 255, 169));
@@ -346,7 +324,7 @@ void Engine::update() {
                             enter_game.restart();
                             s_click.play();
                             mainScreen = false;
-                            loadgameScreen = true;
+                            loading_overworldScreen = true;
                         }
                     }
                 } else if (s_button_settings.getGlobalBounds().contains(mousePos_relative)) {
@@ -384,7 +362,7 @@ void Engine::update() {
             else if(settingsScreen) {
                 mWindow->setMouseCursor(c_default);
             } 
-            else if(loadgameScreen) {
+            else if(loading_overworldScreen) {
                 mWindow->setMouseCursor(c_default);
 
                 sf::Time elapsedTime = load_clock.restart();
@@ -412,15 +390,17 @@ void Engine::update() {
                     load_process_info = "Loading Overworld";
                     txt_load_status.setString(load_process_info);
                     if(enter_game.getElapsedTime().asSeconds() >= 0.f) {
+                        load_clock.restart();
                         loadoverwold_process.setSize(sf::Vector2f(0.0f, 13.0f));
-                        loadgameScreen = false;
-                        gameScreen = true;      
+                        loading_overworldScreen = false;
+                        singleplayerGameScreen = true;      
                     }
                 }
-            } else if(gameScreen) {
+            } else if(singleplayerGameScreen) {
                 if(sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
+                    load_clock.restart();
                     loadoverwold_process.setSize(sf::Vector2f(0.0f, 13.0f));
-                    gameScreen = false;
+                    singleplayerGameScreen = false;
                     mainScreen = true;
                 }
             }
@@ -455,7 +435,7 @@ void Engine::render() {
         mWindow->draw(s_background_settings);
 
         
-    } else if(loadgameScreen) {
+    } else if(loading_overworldScreen) {
         mWindow->draw(s_background_singleplayer_loading);
 
         mWindow->draw(s_maintittle); //main title
@@ -464,8 +444,9 @@ void Engine::render() {
         mWindow->draw(loadoverworld_total);
         mWindow->draw(loadoverwold_process);
     }
-    else if(gameScreen) {
+    else if(singleplayerGameScreen) {
         mWindow->clear(sf::Color::Green);
+        mWindow->draw(terrain_size);
     }
     mWindow->display();
 }
