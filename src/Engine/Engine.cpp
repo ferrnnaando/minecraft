@@ -68,16 +68,10 @@ Engine::Engine(sf::RenderWindow& window) {
 
     s_click.setBuffer(sb_click);
 
-    s_background_settings.setTexture(t_background_settings);
-    s_background_settings.setScale(sf::Vector2f(static_cast<float>(mWindow->getSize().x) / t_background_settings.getSize().x, static_cast<float>(mWindow->getSize().y) / t_background_settings.getSize().y));
-
     s_background_main.setTexture(t_background_main);
     s_background_main.setScale(sf::Vector2f(static_cast<float>(mWindow->getSize().x) / t_background_main.getSize().x, static_cast<float>(mWindow->getSize().y) / t_background_main.getSize().y));
     
-    s_background_singleplayer_loading.setTexture(t_background_singleplayer_loading);
-    s_background_singleplayer_loading.setScale(sf::Vector2f(static_cast<float>(mWindow->getSize().x) / t_background_singleplayer_loading.getSize().x, static_cast<float>(mWindow->getSize().y) / t_background_singleplayer_loading.getSize().y));
-    
-    buttons_hoverColor = sf::Color(100, 100, 255, 200);
+    buttons_hoverColor = sf::Color(116, 164, 214);
     
     txt_version_info.setFont(f_regular);
     txt_version_info.setCharacterSize(15);
@@ -110,32 +104,60 @@ Engine::Engine(sf::RenderWindow& window) {
     txt_random_message.rotate(-20);
 
     s_button_singleplayer.setTexture(t_button);
-    s_button_singleplayer.setScale(sf::Vector2f(0.85f, 0.85f));
-    s_button_singleplayer.setPosition(sf::Vector2f(s_maintittle.getPosition().x + s_maintittle.getGlobalBounds().width / 2 - s_button_singleplayer.getGlobalBounds().width / 2,
-    s_maintittle.getPosition().y + s_maintittle.getGlobalBounds().height + txt_copyright_info.getGlobalBounds().height + 30.0f));
+    s_button_singleplayer.setScale(sf::Vector2f(1.2f, 0.85f));
+    s_button_singleplayer.setPosition(sf::Vector2f(s_maintittle.getPosition().x + s_maintittle.getGlobalBounds().width / 2 - s_button_singleplayer.getGlobalBounds().width / 2, s_maintittle.getPosition().y + s_maintittle.getGlobalBounds().height + txt_copyright_info.getGlobalBounds().height + 45.0f));
+
+    s_button_multiplayer.setTexture(t_button);
+    s_button_multiplayer.setScale(sf::Vector2f(1.2f, 0.85f));
+    s_button_multiplayer.setPosition(sf::Vector2f(s_maintittle.getPosition().x + s_maintittle.getGlobalBounds().width / 2 - s_button_singleplayer.getGlobalBounds().width / 2, s_button_singleplayer.getPosition().y + s_button_singleplayer.getGlobalBounds().height + 6.0f));
 
     s_button_settings.setTexture(t_button);
-    s_button_settings.setScale(sf::Vector2f(0.85f, 0.85f));
-    s_button_settings.setPosition(sf::Vector2f(s_maintittle.getPosition().x + s_maintittle.getGlobalBounds().width / 2 - s_button_settings.getGlobalBounds().width / 2,
-    s_button_singleplayer.getPosition().y + s_button_singleplayer.getGlobalBounds().height + 5.0f));
+    s_button_settings.setScale(sf::Vector2f(0.595f, 0.85f));
+    s_button_settings.setPosition(sf::Vector2f(s_maintittle.getPosition().x + s_maintittle.getGlobalBounds().width / 2 - s_button_multiplayer.getGlobalBounds().width / 2, s_button_multiplayer.getPosition().y + s_button_multiplayer.getGlobalBounds().height + 27.0f));
+
+    s_button_quit.setTexture(t_button);
+    s_button_quit.setScale(sf::Vector2f(0.595f, 0.85f));
+    s_button_quit.setPosition(sf::Vector2f(s_button_settings.getPosition().x + s_button_settings.getGlobalBounds().width + 8.0f, s_button_multiplayer.getPosition().y + s_button_multiplayer.getGlobalBounds().height + 27.0f));
+
+    s_button_language.setTexture(t_button);
+    s_button_language.setScale(sf::Vector2f(0.15f, 0.85f));
+    s_button_language.setPosition(sf::Vector2f(s_button_settings.getPosition().x - s_button_language.getGlobalBounds().width - 8.0f, s_button_multiplayer.getPosition().y + s_button_multiplayer.getGlobalBounds().height + 27.0f));
+
+    s_language_image.setTexture(t_language_button);
+    s_language_image.setScale(sf::Vector2f(0.05f, 0.05f));
+    s_language_image.setPosition(sf::Vector2f(s_button_language.getPosition().x + s_button_language.getGlobalBounds().width - 33.0f, s_button_language.getPosition().x + s_button_language.getGlobalBounds().height + 5.0f));
 
     txt_content_singleplayer.setFont(f_regular);
-    txt_content_singleplayer.setCharacterSize(15);
+    txt_content_singleplayer.setCharacterSize(18);
     txt_content_singleplayer.setFillColor(sf::Color::White);
-    txt_content_singleplayer.setString("Singleplayer");
-    txt_content_singleplayer.setPosition(sf::Vector2f(s_button_singleplayer.getPosition().x + s_button_singleplayer.getGlobalBounds().width / 2 - txt_content_singleplayer.getGlobalBounds().width / 2, 
-                            s_button_singleplayer.getPosition().y + s_button_singleplayer.getGlobalBounds().height / 2 - txt_content_singleplayer.getGlobalBounds().height));
+    txt_content_singleplayer.setString(singleplayer_button_text_en);
+    txt_content_singleplayer.setPosition(sf::Vector2f(s_button_singleplayer.getPosition().x + s_button_singleplayer.getGlobalBounds().width / 2 - txt_content_singleplayer.getGlobalBounds().width / 2,  s_button_singleplayer.getPosition().y + s_button_singleplayer.getGlobalBounds().height / 2 - txt_content_singleplayer.getGlobalBounds().height));
     txt_content_singleplayer.setOutlineThickness(1);
     txt_content_singleplayer.setOutlineColor(sf::Color(0, 0, 0));
+
+    txt_content_multiplayer.setFont(f_regular);
+    txt_content_multiplayer.setCharacterSize(15);
+    txt_content_multiplayer.setFillColor(sf::Color::White);
+    txt_content_multiplayer.setString(multiplayer_button_text_en);
+    txt_content_multiplayer.setPosition(sf::Vector2f(s_button_multiplayer.getPosition().x + s_button_multiplayer.getGlobalBounds().width / 2 - txt_content_multiplayer.getGlobalBounds().width / 2,  s_button_multiplayer.getPosition().y + s_button_multiplayer.getGlobalBounds().height / 2 - txt_content_multiplayer.getGlobalBounds().height));
+    txt_content_multiplayer.setOutlineThickness(1);
+    txt_content_multiplayer.setOutlineColor(sf::Color(0, 0, 0));
 
     txt_content_settings.setFont(f_regular);
     txt_content_settings.setCharacterSize(15);
     txt_content_settings.setFillColor(sf::Color::White);
-    txt_content_settings.setString("Options...");
-    txt_content_settings.setPosition(sf::Vector2f(s_button_settings.getPosition().x + s_button_settings.getGlobalBounds().width / 2 - txt_content_settings.getGlobalBounds().width / 2, 
-                            s_button_settings.getPosition().y + s_button_settings.getGlobalBounds().height / 2 - txt_content_settings.getGlobalBounds().height));
+    txt_content_settings.setString(options_button_text_en);
+    txt_content_settings.setPosition(sf::Vector2f(s_button_settings.getPosition().x + s_button_settings.getGlobalBounds().width / 2 - txt_content_settings.getGlobalBounds().width / 2,  s_button_settings.getPosition().y + s_button_settings.getGlobalBounds().height / 2 - txt_content_settings.getGlobalBounds().height));
     txt_content_settings.setOutlineThickness(1);
     txt_content_settings.setOutlineColor(sf::Color(0, 0, 0));
+
+    txt_content_quit.setFont(f_regular);
+    txt_content_quit.setCharacterSize(15);
+    txt_content_quit.setFillColor(sf::Color::White);
+    txt_content_quit.setString(quit_button_text_en);
+    txt_content_quit.setPosition(sf::Vector2f(s_button_quit.getPosition().x + s_button_quit.getGlobalBounds().width / 2 - txt_content_quit.getGlobalBounds().width / 2,  s_button_quit.getPosition().y + s_button_quit.getGlobalBounds().height / 2 - txt_content_quit.getGlobalBounds().height));
+    txt_content_quit.setOutlineThickness(1);
+    txt_content_quit.setOutlineColor(sf::Color(0, 0, 0));
 
     loadoverworld_total.setSize(sf::Vector2f(500.0f, 15.0f));
     loadoverworld_total.setFillColor(sf::Color(161, 161, 161));
@@ -143,8 +165,29 @@ Engine::Engine(sf::RenderWindow& window) {
     
     loadoverwold_process.setSize(sf::Vector2f(0.0f, 13.0f));
     loadoverwold_process.setFillColor(sf::Color(0, 222, 15));
-    loadoverwold_process.setSize(sf::Vector2f(150.0f, 13.0f));
     loadoverwold_process.setPosition(loadoverworld_total.getPosition().x + 1.0f, loadoverworld_total.getPosition().y + 1.0f);
+
+
+
+
+    s_background_settings.setTexture(t_background_settings);
+    s_background_settings.setScale(sf::Vector2f(static_cast<float>(mWindow->getSize().x) / t_background_settings.getSize().x, static_cast<float>(mWindow->getSize().y) / t_background_settings.getSize().y));
+
+
+
+
+
+    s_background_singleplayer_loading.setTexture(t_background_singleplayer_loading);
+    s_background_singleplayer_loading.setScale(sf::Vector2f(static_cast<float>(mWindow->getSize().x) / t_background_singleplayer_loading.getSize().x, static_cast<float>(mWindow->getSize().y) / t_background_singleplayer_loading.getSize().y));
+
+    load_process_info = "...";
+    txt_load_status.setFont(f_regular);
+    txt_load_status.setCharacterSize(18);
+    txt_load_status.setFillColor(sf::Color::White);
+    txt_load_status.setString(load_process_info);
+    txt_load_status.setPosition(sf::Vector2f(loadoverworld_total.getSize().x / 2 - txt_load_status.getGlobalBounds().width / 2, loadoverworld_total.getGlobalBounds().getPosition().y - 25.0f));
+    txt_load_status.setOutlineThickness(1);
+    txt_load_status.setOutlineColor(sf::Color(0, 0, 0));
 }
 
 void Engine::init() {
@@ -153,14 +196,15 @@ void Engine::init() {
     if(!sb_click.loadFromFile("assets/sounds/effects/click.mp3")) mWindow->close();
     if(!c_hand.loadFromSystem(sf::Cursor::Hand)) mWindow->close();
     if(!c_default.loadFromSystem(sf::Cursor::Arrow)) mWindow->close();
-    if(!t_background_settings.loadFromFile("assets/images/settings_screen.png")) mWindow->close();
     if(!t_background_main.loadFromFile("assets/images/background.jpeg")) mWindow->close();
     if(!t_maintittle.loadFromFile("assets/images/title.png")) mWindow->close();
     if(!t_copyright_editon.loadFromFile("assets/images/edition_copyright.png")) mWindow->close();
     if(!t_button.loadFromFile("assets/images/button.jpg")) mWindow->close();
+    if(!t_language_button.loadFromFile("assets/images/language.png")) mWindow->close();
     if(!f_regular.loadFromFile("assets/fonts/regular.otf")) mWindow->close(); 
     if(!f_title1.loadFromFile("assets/fonts/title1.ttf")) mWindow->close();
     if(!t_background_singleplayer_loading.loadFromFile("assets/images/loading_singleplayer.png")) mWindow->close();
+    if(!t_background_settings.loadFromFile("assets/images/settings_screen.png")) mWindow->close();
 }
 
 void Engine::processWindowEvents() {
@@ -177,7 +221,8 @@ void Engine::processWindowEvents() {
     }
 }
 void Engine::update() {
-    sf::Vector2i mousePos = sf::Mouse::getPosition(*mWindow);
+    sf::Vector2i mousePos_absolute = sf::Mouse::getPosition(*mWindow);
+    sf::Vector2f mousePos_relative = mWindow->mapPixelToCoords(mousePos_absolute);
 
         if(isMessage_increasing) {
             txt_random_message.scale(1 + randomMessage_speedScale * 0.3f, 1 + randomMessage_speedScale * 0.3f);
@@ -191,18 +236,20 @@ void Engine::update() {
 
         if(mWindow->hasFocus()) {
             if(mainScreen) {
-                if (s_button_singleplayer.getGlobalBounds().contains(mousePos.x, mousePos.y)) {
+                if (s_button_singleplayer.getGlobalBounds().contains(mousePos_relative)) {
                     mWindow->setMouseCursor(c_hand);
                     s_button_singleplayer.setColor(buttons_hoverColor);
                     txt_content_singleplayer.setFillColor(sf::Color(254, 255, 169));
                     if(sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
                         if(s_click.getStatus() != sf::SoundSource::Playing) {
+                            load_clock.restart();
+                            enter_game.restart();
                             s_click.play();
                             mainScreen = false;
-                            gameScreen = true;
+                            loadgameScreen = true;
                         }
                     }
-                } else if (s_button_settings.getGlobalBounds().contains(mousePos.x, mousePos.y)) {
+                } else if (s_button_settings.getGlobalBounds().contains(mousePos_relative)) {
                     mWindow->setMouseCursor(c_hand);
                     s_button_settings.setColor(buttons_hoverColor);
                     txt_content_settings.setFillColor(sf::Color(254, 255, 169));
@@ -213,18 +260,31 @@ void Engine::update() {
                             settingsScreen = true;
                         }
                     }
-                } else {
-                    s_button_singleplayer.setColor(sf::Color(255, 255, 255, 200));
+                } else if(s_button_quit.getGlobalBounds().contains(mousePos_relative)) {
+                    mWindow->setMouseCursor(c_hand);
+                    s_button_quit.setColor(buttons_hoverColor);
+                    txt_content_quit.setFillColor(sf::Color(254, 255, 169));
+                    if(sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+                         if(s_click.getStatus() != sf::SoundSource::Playing) {
+                            s_click.play();
+                            mWindow->close();
+                        }
+                    }
+                } 
+                else {
+                    s_button_singleplayer.setColor(sf::Color(255, 255, 255));
                     txt_content_singleplayer.setFillColor(sf::Color::White);
-                    s_button_settings.setColor(sf::Color(255, 255, 255, 200));
+                    s_button_settings.setColor(sf::Color(255, 255, 255));
                     txt_content_settings.setFillColor(sf::Color::White);
+                    s_button_quit.setColor(sf::Color::White);
+                    txt_content_quit.setFillColor(sf::Color::White);
                     mWindow->setMouseCursor(c_default);
                 }
             } 
             else if(settingsScreen) {
                 mWindow->setMouseCursor(c_default);
             } 
-            else if(gameScreen) {
+            else if(loadgameScreen) {
                 mWindow->setMouseCursor(c_default);
 
                 sf::Time elapsedTime = load_clock.restart();
@@ -234,7 +294,35 @@ void Engine::update() {
                 progress = std::min(progress, 1.0f);
 
                 float newWidth = loadoverworld_total.getSize().x * progress;
-                (gameScreen) ? loadoverwold_process.setSize(sf::Vector2f(newWidth, loadoverwold_process.getSize().y)) : loadoverwold_process.setSize(sf::Vector2f(0.0f, 13.0f));
+                loadoverwold_process.setSize(sf::Vector2f(newWidth, loadoverwold_process.getSize().y));
+
+                if(loadoverwold_process.getSize().x <= 50.0f) {
+                    load_process_info = "Generating Terrain...";
+                    txt_load_status.setString(load_process_info);
+                } 
+                else if (loadoverwold_process.getSize().x <= 300.0f) {
+                    load_process_info = "Preparing Level...";
+                    txt_load_status.setString(load_process_info);
+                }
+                else if (loadoverwold_process.getSize().x <= 420.0f) {
+                    load_process_info = "Synthesizing World...";
+                    txt_load_status.setString(load_process_info);
+                } 
+                else if(loadoverwold_process.getSize().x >= 500) {
+                    load_process_info = "Loading Overworld";
+                    txt_load_status.setString(load_process_info);
+                    if(enter_game.getElapsedTime().asSeconds() >= 0.f) {
+                        loadoverwold_process.setSize(sf::Vector2f(0.0f, 13.0f));
+                        loadgameScreen = false;
+                        gameScreen = true;      
+                    }
+                }
+            } else if(gameScreen) {
+                if(sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
+                    loadoverwold_process.setSize(sf::Vector2f(0.0f, 13.0f));
+                    gameScreen = false;
+                    mainScreen = true;
+                }
             }
         }
     return;
@@ -254,22 +342,30 @@ void Engine::render() {
 
         mWindow->draw(s_button_singleplayer); //menu button for singleplayer
         mWindow->draw(txt_content_singleplayer); //singleplayer button 
-
+        mWindow->draw(s_button_multiplayer);
+        mWindow->draw(txt_content_multiplayer);
         mWindow->draw(s_button_settings);
         mWindow->draw(txt_content_settings);
+        mWindow->draw(s_button_quit);
+        mWindow->draw(txt_content_quit);
+        mWindow->draw(s_button_language);
+        mWindow->draw(s_language_image);
 
     } else if(settingsScreen) {
         mWindow->draw(s_background_settings);
 
-        mWindow->draw(txt_version_info);
-        mWindow->draw(txt_copyright_info);
-    } else if(gameScreen) {
+        
+    } else if(loadgameScreen) {
         mWindow->draw(s_background_singleplayer_loading);
 
         mWindow->draw(s_maintittle); //main title
         mWindow->draw(s_copyright_edition); //title copyright
+        mWindow->draw(txt_load_status);
         mWindow->draw(loadoverworld_total);
         mWindow->draw(loadoverwold_process);
+    }
+    else if(gameScreen) {
+        mWindow->clear(sf::Color::Green);
     }
     mWindow->display();
 }
