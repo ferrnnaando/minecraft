@@ -26,8 +26,3 @@ This project is a small-scale implementation of a Minecraft-inspired user interf
 
 
 ## TODO List
-
-- TODO: Please fix the button language image to conserve the aspect ratio on rescaling. Easy.
-- TODO: Make your own configurations. Easy.
-- TODO: Make your own Escape menu on the game. Easy.
-- TODO: Conserve aspect-ratio on window rescaling. Hard.
