@@ -189,23 +189,43 @@ Engine::Engine(sf::RenderWindow& window) {
     txt_load_status.setOutlineThickness(1);
     txt_load_status.setOutlineColor(sf::Color(0, 0, 0));
 
+
+
+
+    //game 
     std::random_device rd;
     std::mt19937 rng(rd());
     std::uniform_int_distribution<float> distribution(200.0f, 270.0f);
-    float terrainHeight = distribution(rng);
+    terrainHeight = distribution(rng);
 
     terrain_size.setSize(sf::Vector2f(mWindow->getSize().x, terrainHeight));
     terrain_size.setFillColor(sf::Color::White);
     terrain_size.setPosition(sf::Vector2f(mWindow->getSize().x - mWindow->getSize().x, mWindow->getSize().y - terrain_size.getGlobalBounds().height));
+
+    sf::IntRect stoneRect(16, 0, 16, 32);
+    s_stone_block.setTexture(t_atlas);
+    s_stone_block.setTextureRect(stoneRect);
+
+    sf::IntRect grassRect(0, 0, 16, 16);
+    s_dirt_block.setTexture(t_atlas);
+    s_dirt_block.setTextureRect(grassRect);
+
+    s_stone_block.setPosition(mWindow->getSize().x - mWindow->getSize().x, mWindow->getSize().y);
+    
+    s_singleplayer_background_viewscreen.setTexture(t_background_game_view);
+    s_singleplayer_background_viewscreen.setScale(sf::Vector2f(static_cast<float>(mWindow->getSize().x) / t_background_game_view.getSize().x, static_cast<float>(mWindow->getSize().y) / t_background_game_view.getSize().y));
+    s_singleplayer_background_viewscreen.setPosition(sf::Vector2f(s_singleplayer_background_viewscreen.getPosition().x, -180.0f));
 }
 
 void Engine::init() {
     std::vector<sf::Image*> ToLoad_Images = { &ico_app};
     std::vector<std::string> ImagesPath = { "assets/images/icon_app.jpeg" };
 
-    std::vector<sf::Texture*> ToLoad_Textures = { &t_button, &t_background_main, &t_background_singleplayer_loading, &t_background_settings, &t_maintittle, &t_copyright_editon, &t_button };
-    std::vector<std::string> TexturesPath = { "assets/images/icon_app.jpeg", "assets/images/background.jpeg", "assets/images/loading_singleplayer.png", 
-    "assets/images/settings_screen.png", "assets/images/title.png", "assets/images/edition_copyright.png", "assets/images/button.jpg" };
+    std::vector<sf::Texture*> ToLoad_Textures = { &t_button, &t_background_main, &t_background_singleplayer_loading, &t_background_settings, &t_maintittle, 
+                                                                                &t_copyright_editon, &t_button, &t_atlas , &t_background_game_view};
+std::vector<std::string> TexturesPath = { "assets/images/icon_app.jpeg", "assets/images/background.jpeg", "assets/images/loading_singleplayer.png", 
+    "assets/images/settings_screen.png", "assets/images/title.png", "assets/images/edition_copyright.png", "assets/images/button.jpg" , "assets/images/texture_atlas.png", 
+                                                        "assets/images/singleplayer_background.png"};
 
     std::vector<sf::Font*> ToLoad_Fonts = { &f_regular, &f_title1 };
     std::vector<std::string> FontsPath = { "assets/fonts/regular.otf", "assets/fonts/title1.ttf" };
@@ -402,8 +422,15 @@ void Engine::update() {
                     loadoverwold_process.setSize(sf::Vector2f(0.0f, 13.0f));
                     singleplayerGameScreen = false;
                     mainScreen = true;
+                } else {
+                    
+
                 }
+
+
             }
+        } else {
+                //std::this_thread::sleep_for(std::chrono::milliseconds(100));
         }
     return;
 }
@@ -446,7 +473,20 @@ void Engine::render() {
     }
     else if(singleplayerGameScreen) {
         mWindow->clear(sf::Color::Green);
-        mWindow->draw(terrain_size);
+        mWindow->draw(s_singleplayer_background_viewscreen);
+        mWindow->draw(terrain_size); //dont care if you delete this, was a model to follow to generate the terrain, now is unuseful, can be used as a backdoor security if the atlas wasnt loaded.
+
+        for(float posX = 0.0f; posX < terrain_size.getSize().x; posX += 16.0f) {
+            for(float posY = mWindow->getSize().y - terrain_size.getSize().y; posY < mWindow->getSize().y; posY += 16.0f) {
+                s_stone_block.setPosition(s_stone_block.getPosition().x, mWindow->getSize().y);
+                s_stone_block.setPosition(posX, posY);
+                mWindow->draw(s_stone_block);
+            }
+        }
+        for(float pos = 0.0f; pos < mWindow->getSize().x; pos += 16.0f) {
+            s_dirt_block.setPosition(pos, mWindow->getSize().y - terrain_size.getSize().y - 16.0f);
+            mWindow->draw(s_dirt_block);
+        }
     }
     mWindow->display();
 }

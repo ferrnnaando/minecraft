@@ -11,4 +11,6 @@ int main() {
     Engine game(window);
     
     game.run();
+
+    return 0x0;
 }

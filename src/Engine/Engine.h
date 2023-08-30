@@ -31,7 +31,7 @@ class Engine  {
       
         //!main screen
 
-        sf::Texture t_background_main, t_maintittle, t_copyright_editon, t_button, t_language_button;
+        sf::Texture t_background_main, t_maintittle, t_copyright_editon, t_button, t_language_button, t_atlas;
         sf::Sprite s_background_main, s_maintittle, s_copyright_edition, s_button_singleplayer, s_button_multiplayer, s_button_settings, s_button_quit, s_button_language, s_language_image;
         sf::Text txt_version_info, txt_copyright_info, txt_content_singleplayer, txt_content_multiplayer, txt_content_settings, txt_content_quit, txt_random_message;
         bool isMessage_increasing = true;
@@ -53,7 +53,10 @@ class Engine  {
 
 
         //game render
+        float terrainHeight;
         sf::RectangleShape terrain_size;
+        sf::Texture t_background_game_view;
+        sf::Sprite s_stone_block, s_dirt_block, s_singleplayer_background_viewscreen;
 
         std::string random_message();
         void init();
