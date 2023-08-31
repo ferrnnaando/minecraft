@@ -9,7 +9,8 @@ class Engine  {
     private:
         sf::RenderWindow* mWindow;
         
-         bool mainScreen = true, settingsScreen = false, loading_overworldScreen = false, singleplayerGameScreen = false;
+        
+        bool mainScreen = true, settingsScreen = false, loading_overworldScreen = false, singleplayerGameScreen = false;
         bool lang_en = true, lang_es = false;
 
         std::string singleplayer_button_text_en = "Singleplayer";
@@ -53,10 +54,15 @@ class Engine  {
 
 
         //game render
+        sf::View view;
+        int gridSizeX;
+        int gridSizeY;
+
+     
         float terrainHeight;
         sf::RectangleShape terrain_size;
         sf::Texture t_background_game_view;
-        sf::Sprite s_stone_block, s_dirt_block, s_singleplayer_background_viewscreen;
+        sf::Sprite s_grass_block, s_dirt_block, s_stone_block, s_bedrock_block, s_singleplayer_background_viewscreen;
 
         std::string random_message();
         void init();

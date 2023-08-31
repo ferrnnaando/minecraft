@@ -193,6 +193,9 @@ Engine::Engine(sf::RenderWindow& window) {
 
 
     //game 
+    view.setCenter(mWindow->getSize().x / 2, mWindow->getSize().y / 2);
+    view.setSize(540, 400);
+
     std::random_device rd;
     std::mt19937 rng(rd());
     std::uniform_int_distribution<float> distribution(200.0f, 270.0f);
@@ -200,21 +203,31 @@ Engine::Engine(sf::RenderWindow& window) {
 
     terrain_size.setSize(sf::Vector2f(mWindow->getSize().x, terrainHeight));
     terrain_size.setFillColor(sf::Color::White);
-    terrain_size.setPosition(sf::Vector2f(mWindow->getSize().x - mWindow->getSize().x, mWindow->getSize().y - terrain_size.getGlobalBounds().height));
+    terrain_size.setPosition(sf::Vector2f(mWindow->getSize().x - mWindow->getSize().x, mWindow->getSize().y - terrain_size.getGlobalBounds().height - 16.0f));
 
-    sf::IntRect stoneRect(16, 0, 16, 32);
+    t_atlas.setRepeated(true); //what does this
+    sf::IntRect grassRect(0, 0, 16, 16);
+    s_grass_block.setTexture(t_atlas);
+    s_grass_block.setTextureRect(grassRect);
+
+    sf::IntRect dirtRect(16, 0, 16, 16);
+    s_dirt_block.setTexture(t_atlas);
+    s_dirt_block.setTextureRect(dirtRect);
+
+    sf::IntRect stoneRect(48, 0, 16, 16);
     s_stone_block.setTexture(t_atlas);
     s_stone_block.setTextureRect(stoneRect);
 
-    sf::IntRect grassRect(0, 0, 16, 16);
-    s_dirt_block.setTexture(t_atlas);
-    s_dirt_block.setTextureRect(grassRect);
-
-    s_stone_block.setPosition(mWindow->getSize().x - mWindow->getSize().x, mWindow->getSize().y);
+    sf::IntRect bedrockRect(64, 0, 16, 16);
+    s_bedrock_block.setTexture(t_atlas);
+    s_bedrock_block.setTextureRect(bedrockRect);
     
     s_singleplayer_background_viewscreen.setTexture(t_background_game_view);
     s_singleplayer_background_viewscreen.setScale(sf::Vector2f(static_cast<float>(mWindow->getSize().x) / t_background_game_view.getSize().x, static_cast<float>(mWindow->getSize().y) / t_background_game_view.getSize().y));
     s_singleplayer_background_viewscreen.setPosition(sf::Vector2f(s_singleplayer_background_viewscreen.getPosition().x, -180.0f));
+
+    gridSizeX = mWindow->getSize().x / 16;
+    gridSizeY = mWindow->getSize().y / 16;
 }
 
 void Engine::init() {
@@ -310,12 +323,19 @@ void Engine::processWindowEvents() {
             case sf::Event::Closed:
                 mWindow->close();
                 break;
+
+
+
             default:
                 break;
         }
     }
 }
+
 void Engine::update() {
+    gridSizeX = mWindow->getSize().x / 16;
+    gridSizeY = mWindow->getSize().y / 16;
+
     sf::Vector2i mousePos_absolute = sf::Mouse::getPosition(*mWindow);
     sf::Vector2f mousePos_relative = mWindow->mapPixelToCoords(mousePos_absolute);
 
@@ -423,13 +443,22 @@ void Engine::update() {
                     singleplayerGameScreen = false;
                     mainScreen = true;
                 } else {
-                    
+                    if(sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
+                        view.move(sf::Vector2f(-3.0f, 0.0f));
+                    } else if(sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
+                        view.move(sf::Vector2f(3.0f, 0.0f));
+                    }
 
+                    sf::Vector2f viewCenter = view.getCenter();
+        
+                    float minX = 0;
+                    float maxX = static_cast<float>(mWindow->getSize().y);
+                    viewCenter.x = std::clamp(viewCenter.x, minX + view.getSize().x / 16, maxX - view.getSize().x / 16);
+                    view.setCenter(viewCenter);
                 }
-
-
             }
-        } else {
+        } 
+        else {
                 //std::this_thread::sleep_for(std::chrono::milliseconds(100));
         }
     return;
@@ -438,6 +467,7 @@ void Engine::update() {
 void Engine::render() {
     mWindow->clear();
     if(mainScreen) {
+        mWindow->setView(mWindow->getDefaultView());
         mWindow->draw(s_background_main);
 
         mWindow->draw(txt_version_info);
@@ -470,22 +500,28 @@ void Engine::render() {
         mWindow->draw(txt_load_status);
         mWindow->draw(loadoverworld_total);
         mWindow->draw(loadoverwold_process);
-    }
-    else if(singleplayerGameScreen) {
+    } 
+    else if (singleplayerGameScreen) {
+        mWindow->setView(view);
         mWindow->clear(sf::Color::Green);
         mWindow->draw(s_singleplayer_background_viewscreen);
-        mWindow->draw(terrain_size); //dont care if you delete this, was a model to follow to generate the terrain, now is unuseful, can be used as a backdoor security if the atlas wasnt loaded.
+        mWindow->draw(terrain_size);
 
-        for(float posX = 0.0f; posX < terrain_size.getSize().x; posX += 16.0f) {
-            for(float posY = mWindow->getSize().y - terrain_size.getSize().y; posY < mWindow->getSize().y; posY += 16.0f) {
-                s_stone_block.setPosition(s_stone_block.getPosition().x, mWindow->getSize().y);
-                s_stone_block.setPosition(posX, posY);
-                mWindow->draw(s_stone_block);
+        int generated_size = (mWindow->getSize().y - terrain_size.getSize().y) / 16.0f; //grids for the generated rectangle shape
+
+        for (int y = 0; y < gridSizeY; ++y) {
+            for (int x = 0; x < gridSizeX; ++x) {
+                float posX = x * 16.0f;
+                float posY = y * 16.0f;
+
+                if (y == gridSizeY - 1) {
+                    s_bedrock_block.setPosition(posX, posY);
+                    mWindow->draw(s_bedrock_block);
+                } else if (y >= gridSizeY - generated_size) { //now we have 2 layouts restantz
+                    s_stone_block.setPosition(posX, posY);
+                    mWindow->draw(s_stone_block);
+                }
             }
-        }
-        for(float pos = 0.0f; pos < mWindow->getSize().x; pos += 16.0f) {
-            s_dirt_block.setPosition(pos, mWindow->getSize().y - terrain_size.getSize().y - 16.0f);
-            mWindow->draw(s_dirt_block);
         }
     }
     mWindow->display();
