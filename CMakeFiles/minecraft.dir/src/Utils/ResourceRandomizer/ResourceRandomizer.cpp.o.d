@@ -1,7 +1,7 @@
-CMakeFiles/Minecraft.dir/src/Engine/Engine.cpp.o: \
-  /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Engine/Engine.cpp \
-  /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Engine/Engine.h \
-  /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Engine/../header.h \
+CMakeFiles/Minecraft.dir/src/Utils/ResourceRandomizer/ResourceRandomizer.cpp.o: \
+  /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Utils/ResourceRandomizer/ResourceRandomizer.cpp \
+  /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Utils/ResourceRandomizer/ResourceRandomizer.h \
+  /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Utils/ResourceRandomizer/../../header.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/__config \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/__config_site \
@@ -524,5 +524,4 @@ CMakeFiles/Minecraft.dir/src/Engine/Engine.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/numeric \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/unordered_map \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/__hash_table \
-  /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Engine/../Utils/ResourceRandomizer/ResourceRandomizer.h \
-  /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Engine/../Utils/ResourceRandomizer/../../header.h
+  /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Utils/ResourceRandomizer/../../Utils/ResourceRandomizer/ResourceRandomizer.h

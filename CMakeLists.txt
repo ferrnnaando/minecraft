@@ -7,6 +7,7 @@ file(GLOB source_files
 	"src/*.cpp"
 	"src/Engine/*.cpp"
 	"src/Screens/TittleScreen/*.cpp"
+	"src/Utils/ResourceRandomizer/*.cpp"
 )
 
 set(SOURCES ${source_files})

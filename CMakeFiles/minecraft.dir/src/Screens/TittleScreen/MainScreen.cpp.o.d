@@ -524,5 +524,7 @@ CMakeFiles/Minecraft.dir/src/Screens/TittleScreen/MainScreen.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/numeric \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/unordered_map \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/__hash_table \
+  /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Screens/TittleScreen/../../Utils/ResourceRandomizer/ResourceRandomizer.h \
+  /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Screens/TittleScreen/../../Utils/ResourceRandomizer/../../header.h \
   /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Screens/TittleScreen/../../Engine/Engine.h \
   /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Screens/TittleScreen/../../Engine/../header.h

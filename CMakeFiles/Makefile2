@@ -81,12 +81,12 @@ clean: CMakeFiles/Minecraft.dir/clean
 CMakeFiles/Minecraft.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Minecraft.dir/build.make CMakeFiles/Minecraft.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Minecraft.dir/build.make CMakeFiles/Minecraft.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/CMakeFiles --progress-num=1,2,3,4 "Built target Minecraft"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/CMakeFiles --progress-num=1,2,3,4,5 "Built target Minecraft"
 .PHONY : CMakeFiles/Minecraft.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Minecraft.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Minecraft.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/CMakeFiles 0
 .PHONY : CMakeFiles/Minecraft.dir/rule

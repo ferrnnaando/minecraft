@@ -15,6 +15,19 @@ Engine::Engine(sf::RenderWindow& window) {
     s_click.setBuffer(sb_click);
     buttons_hoverColor = sf::Color(116, 164, 214);
     
+    s_maintittle.setTexture(t_maintittle);
+    s_maintittle.setScale(sf::Vector2f(0.3f, 0.3f));
+    s_maintittle.setPosition(sf::Vector2f((mWindow->getSize().x / 2) - (s_maintittle.getGlobalBounds().width / 2), 60.0f));   
+
+    s_copyright_edition.setTexture(t_copyright_editon);
+    s_copyright_edition.setScale(sf::Vector2f(1.0f, 1.0f));
+    s_copyright_edition.setPosition(sf::Vector2f(s_maintittle.getPosition().x + s_maintittle.getGlobalBounds().width / 2 - s_copyright_edition.getGlobalBounds().width / 2, s_maintittle.getPosition().x + s_maintittle.getGlobalBounds().height / 2 - s_copyright_edition.getGlobalBounds().width / 2.4));
+
+    gridSizeX = mWindow->getSize().x / 16;
+    gridSizeY = mWindow->getSize().y / 16;
+
+    mousePos_absolute = sf::Mouse::getPosition(*mWindow);
+    mousePos_relative = mWindow->mapPixelToCoords(mousePos_absolute);
 }
 
 bool Engine::isEnabled() {
@@ -30,6 +43,9 @@ void Engine::init() {
     if(!t_button.loadFromFile("assets/images/button.jpg")) mWindow->close();
     if(!f_regular.loadFromFile("assets/fonts/regular.otf")) mWindow->close(); 
     if(!f_title1.loadFromFile("assets/fonts/title1.ttf")) mWindow->close();
+
+    if(!t_maintittle.loadFromFile("assets/images/title.png")) mWindow->close();
+    if(!t_copyright_editon.loadFromFile("assets/images/edition_copyright.png")) mWindow->close();
 }
 
 /*Engine::Engine(sf::RenderWindow& window) { 
@@ -101,8 +117,6 @@ void Engine::init() {
     s_singleplayer_background_viewscreen.setScale(sf::Vector2f(static_cast<float>(mWindow->getSize().x) / t_background_game_view.getSize().x, static_cast<float>(mWindow->getSize().y) / t_background_game_view.getSize().y));
     s_singleplayer_background_viewscreen.setPosition(sf::Vector2f(s_singleplayer_background_viewscreen.getPosition().x, -180.0f));
 
-    gridSizeX = mWindow->getSize().x / 16;
-    gridSizeY = mWindow->getSize().y / 16;
 }
 
 void Engine::init() {
@@ -189,25 +203,6 @@ std::vector<std::string> TexturesPath = { "assets/images/icon_app.jpeg", "assets
     }
 }
 
-void Engine::processWindowEvents() {
-    sf::Event event;
-
-    while(mWindow->pollEvent(event)) {
-        switch(event.type) {
-            case sf::Event::Closed:
-                mWindow->close();
-                break;
-
-            case sf::Event::KeyPressed:
-            mWindow->setView(mWindow->getDefaultView());
-            break;
-
-            default:
-                break;
-        }
-    }
-}
-
 void Engine::update() {
     gridSizeX = mWindow->getSize().x / 16;
     gridSizeY = mWindow->getSize().y / 16;
@@ -215,15 +210,6 @@ void Engine::update() {
     sf::Vector2i mousePos_absolute = sf::Mouse::getPosition(*mWindow);
     sf::Vector2f mousePos_relative = mWindow->mapPixelToCoords(mousePos_absolute);
 
-        if(isMessage_increasing) {
-            txt_random_message.scale(1 + randomMessage_speedScale * 0.3f, 1 + randomMessage_speedScale * 0.3f);
-        } else {
-            txt_random_message.scale(1 - randomMessage_speedScale * 0.3f, 1 - randomMessage_speedScale * 0.3f);
-        }
-
-        if(txt_random_message.getScale().x > 1.25f || txt_random_message.getScale().x < 1.0f) {
-            isMessage_increasing = !isMessage_increasing;
-        }
 
         if(mWindow->hasFocus()) {
             if(mainScreen) {

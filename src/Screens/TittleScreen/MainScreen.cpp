@@ -5,7 +5,7 @@ bool MainScreen::isEnabled() {
 }
 
 void MainScreen::init() {
-    if(!t_background_main.loadFromFile("assets/images/background.jpeg")) mWindow->close();
+   
 }
 
 MainScreen::MainScreen(sf::RenderWindow& window) : Engine(window) {
@@ -28,19 +28,10 @@ MainScreen::MainScreen(sf::RenderWindow& window) : Engine(window) {
     txt_copyright_info.setString("Not Mojang AB. Can distribute!");
     txt_copyright_info.setPosition(sf::Vector2f(mWindow->getSize().x- txt_copyright_info.getGlobalBounds().width - 8, mWindow->getSize().y - txt_version_info.getCharacterSize() - 5));
 
-    s_maintittle.setTexture(t_maintittle);
-    s_maintittle.setScale(sf::Vector2f(0.3f, 0.3f));
-    s_maintittle.setPosition(sf::Vector2f((mWindow->getSize().x / 2) - (s_maintittle.getGlobalBounds().width / 2), 60.0f));   
-
-    s_copyright_edition.setTexture(t_copyright_editon);
-    s_copyright_edition.setScale(sf::Vector2f(1.0f, 1.0f));
-    s_copyright_edition.setPosition(sf::Vector2f(s_maintittle.getPosition().x + s_maintittle.getGlobalBounds().width / 2 - s_copyright_edition.getGlobalBounds().width / 2,
-    s_maintittle.getPosition().x + s_maintittle.getGlobalBounds().height / 2 - s_copyright_edition.getGlobalBounds().width / 2.4));
-
     txt_random_message.setFont(f_regular);
     txt_random_message.setCharacterSize(20);
     txt_random_message.setFillColor(sf::Color(213, 222, 82));
-    txt_random_message.setString(random_message());
+    txt_random_message.setString(Randomize_SlashMessage());
     txt_random_message.setPosition(sf::Vector2f(s_maintittle.getGlobalBounds().width + 20.0f, s_maintittle.getGlobalBounds().height + 50.0f));
     txt_random_message.setOutlineThickness(1);
     txt_random_message.setOutlineColor(sf::Color::Black);
@@ -110,9 +101,34 @@ void MainScreen::windowEvents() {
 }
 
 void MainScreen::userEvents() {
-    if(sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
-        mWindow->close();
+    if(isMessage_increasing) {
+        txt_random_message.scale(1 + randomMessage_speedScale * 0.3f, 1 + randomMessage_speedScale * 0.3f);
+    } else {
+        txt_random_message.scale(1 - randomMessage_speedScale * 0.3f, 1 - randomMessage_speedScale * 0.3f);
     }
+
+    if(txt_random_message.getScale().x > 1.25f || txt_random_message.getScale().x < 1.0f) {
+        isMessage_increasing = !isMessage_increasing;
+    }
+
+     if(mWindow->hasFocus()) {
+        if(sf::Keyboard::isKeyPressed(sf::Keyboard::Escape) && sf::Mouse::isButtonPressed(sf::Mouse::Left)) {}
+            else if (s_button_singleplayer.getGlobalBounds().contains(mousePos_relative)) {
+                mWindow->setMouseCursor(c_hand);
+                s_button_singleplayer.setColor(buttons_hoverColor);
+                txt_content_singleplayer.setFillColor(sf::Color(254, 255, 169));
+                if(sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+                    if(s_click.getStatus() != sf::SoundSource::Playing) {
+                        //load_clock.restart();
+                        //enter_game.restart();
+                        s_click.play();
+                        //mainScreen = false;
+                        //loading_overworldScreen = true;
+                    }
+                }
+            }
+        }
+
 }
 
 void MainScreen::update() {
@@ -141,6 +157,7 @@ void MainScreen::render() {
         mWindow->draw(s_button_quit);
         mWindow->draw(txt_content_quit);
     }
+    mWindow->display();
 }
 
 void MainScreen::run() {
@@ -148,62 +165,4 @@ void MainScreen::run() {
     userEvents();
     update();
     render();
-}
-
-
-
-
-
-
-std::string MainScreen::random_message() {
-    int random = rand() % 21;
-    std::string message;
-
-    if(random == 0) {
-        message = "Craft, Explore, Survive!";
-    } else if(random == 1) {
-        message = "Unleash Your Creativity!";
-    } else if(random == 2) {
-        message = "New Adventures Await!";
-    } else if(random == 3) {
-        message = "Block-Building Fun Awaits!";
-    } else if(random == 4) {
-        message = "Discover Endless Worlds!";
-    } else if(random == 5) {
-        message = "Mine, Craft, Repeat!";
-    } else if(random == 6) {
-        message = "Forge Your Own Path!";
-    } else if(random == 7) {
-        message = "Build Your Dream World!";
-    } else if(random == 8) {
-        message = "Enter the Pixelated Realm!";
-    } else if(random == 9) {
-        message ="Embark on Epic Quests!";
-    } else if(random == 10) {
-        message = "Crafting Awaits Your Command!";
-    } else if(random == 11) {
-        message = "Adventure Awaits, Miner!";
-    } else if(random == 12) {
-        message = "Crafting and Building Galore!";
-    } else if(random == 13) {
-        message = "Dive into Blocky Wonders!";
-    } else if(random == 14) {
-        message = "Survive and Thrive in Minecraft!";
-    } else if(random == 15) {
-        message = "Un-Limitless Possibilities!";
-    } else if(random == 16) {
-        message = "Build Your Imagination!";
-    } else if(random == 17) {
-        message = "Construct Your Fantasy World!";
-    } else if(random == 18) {
-        message = "Explore, Create, Conquer!";
-    } else if(random == 19) {
-        message = "Brave the Blocks and Build!";
-    } else if(random == 20) {
-        message = "Begin Your Minecraft Journey!";
-    } else {
-        message = "Snapshot, Smile!";
-    }
-
-    return message;
 }

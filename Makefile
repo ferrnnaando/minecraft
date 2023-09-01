@@ -177,6 +177,30 @@ src/Screens/TittleScreen/MainScreen.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Minecraft.dir/build.make CMakeFiles/Minecraft.dir/src/Screens/TittleScreen/MainScreen.cpp.s
 .PHONY : src/Screens/TittleScreen/MainScreen.cpp.s
 
+src/Utils/ResourceRandomizer/ResourceRandomizer.o: src/Utils/ResourceRandomizer/ResourceRandomizer.cpp.o
+.PHONY : src/Utils/ResourceRandomizer/ResourceRandomizer.o
+
+# target to build an object file
+src/Utils/ResourceRandomizer/ResourceRandomizer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Minecraft.dir/build.make CMakeFiles/Minecraft.dir/src/Utils/ResourceRandomizer/ResourceRandomizer.cpp.o
+.PHONY : src/Utils/ResourceRandomizer/ResourceRandomizer.cpp.o
+
+src/Utils/ResourceRandomizer/ResourceRandomizer.i: src/Utils/ResourceRandomizer/ResourceRandomizer.cpp.i
+.PHONY : src/Utils/ResourceRandomizer/ResourceRandomizer.i
+
+# target to preprocess a source file
+src/Utils/ResourceRandomizer/ResourceRandomizer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Minecraft.dir/build.make CMakeFiles/Minecraft.dir/src/Utils/ResourceRandomizer/ResourceRandomizer.cpp.i
+.PHONY : src/Utils/ResourceRandomizer/ResourceRandomizer.cpp.i
+
+src/Utils/ResourceRandomizer/ResourceRandomizer.s: src/Utils/ResourceRandomizer/ResourceRandomizer.cpp.s
+.PHONY : src/Utils/ResourceRandomizer/ResourceRandomizer.s
+
+# target to generate assembly for a file
+src/Utils/ResourceRandomizer/ResourceRandomizer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Minecraft.dir/build.make CMakeFiles/Minecraft.dir/src/Utils/ResourceRandomizer/ResourceRandomizer.cpp.s
+.PHONY : src/Utils/ResourceRandomizer/ResourceRandomizer.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -216,6 +240,9 @@ help:
 	@echo "... src/Screens/TittleScreen/MainScreen.o"
 	@echo "... src/Screens/TittleScreen/MainScreen.i"
 	@echo "... src/Screens/TittleScreen/MainScreen.s"
+	@echo "... src/Utils/ResourceRandomizer/ResourceRandomizer.o"
+	@echo "... src/Utils/ResourceRandomizer/ResourceRandomizer.i"
+	@echo "... src/Utils/ResourceRandomizer/ResourceRandomizer.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
