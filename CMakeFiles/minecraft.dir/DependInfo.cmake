@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/BaseResource/BaseResource.cpp" "CMakeFiles/Minecraft.dir/src/BaseResource/BaseResource.cpp.o" "gcc" "CMakeFiles/Minecraft.dir/src/BaseResource/BaseResource.cpp.o.d"
   "/Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Engine/Engine.cpp" "CMakeFiles/Minecraft.dir/src/Engine/Engine.cpp.o" "gcc" "CMakeFiles/Minecraft.dir/src/Engine/Engine.cpp.o.d"
+  "/Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Screens/TittleScreen/MainScreen.cpp" "CMakeFiles/Minecraft.dir/src/Screens/TittleScreen/MainScreen.cpp.o" "gcc" "CMakeFiles/Minecraft.dir/src/Screens/TittleScreen/MainScreen.cpp.o.d"
   "/Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/main.cpp" "CMakeFiles/Minecraft.dir/src/main.cpp.o" "gcc" "CMakeFiles/Minecraft.dir/src/main.cpp.o.d"
   )
 

@@ -1,6 +1,7 @@
-CMakeFiles/Minecraft.dir/src/main.cpp.o: \
-  /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/main.cpp \
-  /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/header.h \
+CMakeFiles/Minecraft.dir/src/Screens/TittleScreen/MainScreen.cpp.o: \
+  /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Screens/TittleScreen/MainScreen.cpp \
+  /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Screens/TittleScreen/MainScreen.h \
+  /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Screens/TittleScreen/../../header.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/__config \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/__config_site \
@@ -523,8 +524,5 @@ CMakeFiles/Minecraft.dir/src/main.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/numeric \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/unordered_map \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/__hash_table \
-  /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Engine/Engine.h \
-  /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Engine/../header.h \
-  /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Screens/TittleScreen/MainScreen.h \
-  /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Screens/TittleScreen/../../header.h \
-  /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Screens/TittleScreen/../../Engine/Engine.h
+  /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Screens/TittleScreen/../../Engine/Engine.h \
+  /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Screens/TittleScreen/../../Engine/../header.h

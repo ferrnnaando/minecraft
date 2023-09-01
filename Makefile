@@ -129,30 +129,6 @@ Minecraft/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Minecraft.dir/build.make CMakeFiles/Minecraft.dir/build
 .PHONY : Minecraft/fast
 
-src/BaseResource/BaseResource.o: src/BaseResource/BaseResource.cpp.o
-.PHONY : src/BaseResource/BaseResource.o
-
-# target to build an object file
-src/BaseResource/BaseResource.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Minecraft.dir/build.make CMakeFiles/Minecraft.dir/src/BaseResource/BaseResource.cpp.o
-.PHONY : src/BaseResource/BaseResource.cpp.o
-
-src/BaseResource/BaseResource.i: src/BaseResource/BaseResource.cpp.i
-.PHONY : src/BaseResource/BaseResource.i
-
-# target to preprocess a source file
-src/BaseResource/BaseResource.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Minecraft.dir/build.make CMakeFiles/Minecraft.dir/src/BaseResource/BaseResource.cpp.i
-.PHONY : src/BaseResource/BaseResource.cpp.i
-
-src/BaseResource/BaseResource.s: src/BaseResource/BaseResource.cpp.s
-.PHONY : src/BaseResource/BaseResource.s
-
-# target to generate assembly for a file
-src/BaseResource/BaseResource.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Minecraft.dir/build.make CMakeFiles/Minecraft.dir/src/BaseResource/BaseResource.cpp.s
-.PHONY : src/BaseResource/BaseResource.cpp.s
-
 src/Engine/Engine.o: src/Engine/Engine.cpp.o
 .PHONY : src/Engine/Engine.o
 
@@ -176,6 +152,30 @@ src/Engine/Engine.s: src/Engine/Engine.cpp.s
 src/Engine/Engine.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Minecraft.dir/build.make CMakeFiles/Minecraft.dir/src/Engine/Engine.cpp.s
 .PHONY : src/Engine/Engine.cpp.s
+
+src/Screens/TittleScreen/MainScreen.o: src/Screens/TittleScreen/MainScreen.cpp.o
+.PHONY : src/Screens/TittleScreen/MainScreen.o
+
+# target to build an object file
+src/Screens/TittleScreen/MainScreen.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Minecraft.dir/build.make CMakeFiles/Minecraft.dir/src/Screens/TittleScreen/MainScreen.cpp.o
+.PHONY : src/Screens/TittleScreen/MainScreen.cpp.o
+
+src/Screens/TittleScreen/MainScreen.i: src/Screens/TittleScreen/MainScreen.cpp.i
+.PHONY : src/Screens/TittleScreen/MainScreen.i
+
+# target to preprocess a source file
+src/Screens/TittleScreen/MainScreen.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Minecraft.dir/build.make CMakeFiles/Minecraft.dir/src/Screens/TittleScreen/MainScreen.cpp.i
+.PHONY : src/Screens/TittleScreen/MainScreen.cpp.i
+
+src/Screens/TittleScreen/MainScreen.s: src/Screens/TittleScreen/MainScreen.cpp.s
+.PHONY : src/Screens/TittleScreen/MainScreen.s
+
+# target to generate assembly for a file
+src/Screens/TittleScreen/MainScreen.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Minecraft.dir/build.make CMakeFiles/Minecraft.dir/src/Screens/TittleScreen/MainScreen.cpp.s
+.PHONY : src/Screens/TittleScreen/MainScreen.cpp.s
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
@@ -210,12 +210,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Minecraft"
-	@echo "... src/BaseResource/BaseResource.o"
-	@echo "... src/BaseResource/BaseResource.i"
-	@echo "... src/BaseResource/BaseResource.s"
 	@echo "... src/Engine/Engine.o"
 	@echo "... src/Engine/Engine.i"
 	@echo "... src/Engine/Engine.s"
+	@echo "... src/Screens/TittleScreen/MainScreen.o"
+	@echo "... src/Screens/TittleScreen/MainScreen.i"
+	@echo "... src/Screens/TittleScreen/MainScreen.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
