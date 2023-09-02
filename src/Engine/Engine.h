@@ -8,6 +8,9 @@ class Engine {
     protected:
         sf::RenderWindow* mWindow;
 
+        std::string game_version = "Minecraft 1.20.1";
+        std::string game_disclaimer = "Not Mojang AB. Can distribute!";
+
         virtual bool isEnabled();
         virtual void init();
 

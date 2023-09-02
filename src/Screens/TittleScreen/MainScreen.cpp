@@ -19,19 +19,19 @@ MainScreen::MainScreen(sf::RenderWindow& window) : Engine(window) {
     txt_version_info.setFont(f_regular);
     txt_version_info.setCharacterSize(15);
     txt_version_info.setFillColor(sf::Color(255, 255, 255));
-    txt_version_info.setString("Minecraft 1.20.1");
+    txt_version_info.setString(game_version);
     txt_version_info.setPosition(sf::Vector2f(8, mWindow->getSize().y - txt_version_info.getCharacterSize() - 5));
 
     txt_copyright_info.setFont(f_regular);
     txt_copyright_info.setCharacterSize(15);
     txt_copyright_info.setFillColor(sf::Color::White);
-    txt_copyright_info.setString("Not Mojang AB. Can distribute!");
+    txt_copyright_info.setString(game_disclaimer);
     txt_copyright_info.setPosition(sf::Vector2f(mWindow->getSize().x- txt_copyright_info.getGlobalBounds().width - 8, mWindow->getSize().y - txt_version_info.getCharacterSize() - 5));
 
     txt_random_message.setFont(f_regular);
     txt_random_message.setCharacterSize(20);
     txt_random_message.setFillColor(sf::Color(213, 222, 82));
-    txt_random_message.setString(Randomize_SlashMessage());
+    txt_random_message.setString(static_cast<std::string>(Randomize_SlashMessage()));
     txt_random_message.setPosition(sf::Vector2f(s_maintittle.getGlobalBounds().width + 20.0f, s_maintittle.getGlobalBounds().height + 50.0f));
     txt_random_message.setOutlineThickness(1);
     txt_random_message.setOutlineColor(sf::Color::Black);
@@ -46,12 +46,12 @@ MainScreen::MainScreen(sf::RenderWindow& window) : Engine(window) {
     s_button_multiplayer.setPosition(sf::Vector2f(s_maintittle.getPosition().x + s_maintittle.getGlobalBounds().width / 2 - s_button_singleplayer.getGlobalBounds().width / 2, s_button_singleplayer.getPosition().y + s_button_singleplayer.getGlobalBounds().height + 6.0f));
 
     s_button_settings.setTexture(t_button);
-    s_button_settings.setScale(sf::Vector2f(0.595f, 0.85f));
+    s_button_settings.setScale(sf::Vector2f(0.58f, 0.85f));
     s_button_settings.setPosition(sf::Vector2f(s_maintittle.getPosition().x + s_maintittle.getGlobalBounds().width / 2 - s_button_multiplayer.getGlobalBounds().width / 2, s_button_multiplayer.getPosition().y + s_button_multiplayer.getGlobalBounds().height + 27.0f));
 
     s_button_quit.setTexture(t_button);
-    s_button_quit.setScale(sf::Vector2f(0.595f, 0.85f));
-    s_button_quit.setPosition(sf::Vector2f(s_button_settings.getPosition().x + s_button_settings.getGlobalBounds().width + 8.0f, s_button_multiplayer.getPosition().y + s_button_multiplayer.getGlobalBounds().height + 27.0f));
+    s_button_quit.setScale(sf::Vector2f(0.58f, 0.85f));
+    s_button_quit.setPosition(sf::Vector2f(s_button_settings.getPosition().x + s_button_settings.getGlobalBounds().width + 9.5f, s_button_multiplayer.getPosition().y + s_button_multiplayer.getGlobalBounds().height + 27.0f));
 
     txt_content_singleplayer.setFont(f_regular);
     txt_content_singleplayer.setCharacterSize(18);

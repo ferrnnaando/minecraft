@@ -1,6 +1,6 @@
 #include "ResourceRandomizer.h"
 
-std::string Randomize_SlashMessage() {
+std::string_view Randomize_SlashMessage() {
 
     std::vector<std::string> messages = {
     "Craft, Explore, Survive!",
@@ -232,7 +232,8 @@ std::string Randomize_SlashMessage() {
     std::uniform_int_distribution<int> distribution(0, messages.size());
     int random = distribution(gen);
 
-    return messages[random];
+    std::string_view fastStr { messages[random] };
+    return fastStr;
 }
 
 sf::Texture Randomize_MainBackground() {

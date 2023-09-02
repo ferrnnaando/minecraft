@@ -18,6 +18,9 @@ class MainScreen : public Engine {
         void render();
     
         sf::RenderWindow* mWindow;
+
+        //sf::Vector2i mouse
+        
         std::string singleplayer_button_text_en = "Singleplayer";
         std::string multiplayer_button_text_en = "Multiplayer";
         std::string options_button_text_en = "Options...";
@@ -29,4 +32,7 @@ class MainScreen : public Engine {
 
         bool isMessage_increasing = true;
         float randomMessage_speedScale = 0.005f;
+
+    public:
+        ~MainScreen() {};
 };
