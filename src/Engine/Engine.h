@@ -65,8 +65,6 @@ class Engine {
 
         //game render
         sf::View view;
-        int gridSizeX;
-        int gridSizeY;
 
      
         float terrainHeight;
