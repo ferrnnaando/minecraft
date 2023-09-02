@@ -16,4 +16,4 @@
 #include <stdexcept>
 #include <memory>
 
-#include "Utils/ResourceRandomizer/ResourceRandomizer.h"
+#include "Utils/ResourceRandomizer.h"

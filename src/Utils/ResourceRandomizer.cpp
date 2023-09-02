@@ -234,3 +234,19 @@ std::string Randomize_SlashMessage() {
 
     return messages[random];
 }
+
+sf::Texture Randomize_MainBackground() {
+    std::vector<std::string> paths = { "assets/images/backgrounds/mainScreen_0.jpg", "assets/images/backgrounds/mainScreen_1.jpeg", "assets/images/backgrounds/mainScreen_2.png", 
+    "assets/images/backgrounds/mainScreen_3.jpeg", "assets/images/backgrounds/mainScreen_4.jpeg", "assets/images/backgrounds/mainScreen_5.jpeg", 
+    "assets/images/backgrounds/mainScreen_6.jpeg", "assets/images/backgrounds/mainScreen_7.jpeg" };
+
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<int> distribution(0, paths.size());
+    int random = distribution(gen);
+
+    sf::Texture t_background;
+    t_background.loadFromFile(paths[random]);
+
+    return t_background;
+}

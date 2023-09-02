@@ -5,7 +5,7 @@ bool MainScreen::isEnabled() {
 }
 
 void MainScreen::init() {
-   
+   t_background_main = Randomize_MainBackground();
 }
 
 MainScreen::MainScreen(sf::RenderWindow& window) : Engine(window) {

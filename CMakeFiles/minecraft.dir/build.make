@@ -97,19 +97,19 @@ CMakeFiles/Minecraft.dir/src/Screens/TittleScreen/MainScreen.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Minecraft.dir/src/Screens/TittleScreen/MainScreen.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Screens/TittleScreen/MainScreen.cpp -o CMakeFiles/Minecraft.dir/src/Screens/TittleScreen/MainScreen.cpp.s
 
-CMakeFiles/Minecraft.dir/src/Utils/ResourceRandomizer/ResourceRandomizer.cpp.o: CMakeFiles/Minecraft.dir/flags.make
-CMakeFiles/Minecraft.dir/src/Utils/ResourceRandomizer/ResourceRandomizer.cpp.o: src/Utils/ResourceRandomizer/ResourceRandomizer.cpp
-CMakeFiles/Minecraft.dir/src/Utils/ResourceRandomizer/ResourceRandomizer.cpp.o: CMakeFiles/Minecraft.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Minecraft.dir/src/Utils/ResourceRandomizer/ResourceRandomizer.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Minecraft.dir/src/Utils/ResourceRandomizer/ResourceRandomizer.cpp.o -MF CMakeFiles/Minecraft.dir/src/Utils/ResourceRandomizer/ResourceRandomizer.cpp.o.d -o CMakeFiles/Minecraft.dir/src/Utils/ResourceRandomizer/ResourceRandomizer.cpp.o -c /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Utils/ResourceRandomizer/ResourceRandomizer.cpp
+CMakeFiles/Minecraft.dir/src/Utils/ResourceRandomizer.cpp.o: CMakeFiles/Minecraft.dir/flags.make
+CMakeFiles/Minecraft.dir/src/Utils/ResourceRandomizer.cpp.o: src/Utils/ResourceRandomizer.cpp
+CMakeFiles/Minecraft.dir/src/Utils/ResourceRandomizer.cpp.o: CMakeFiles/Minecraft.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Minecraft.dir/src/Utils/ResourceRandomizer.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Minecraft.dir/src/Utils/ResourceRandomizer.cpp.o -MF CMakeFiles/Minecraft.dir/src/Utils/ResourceRandomizer.cpp.o.d -o CMakeFiles/Minecraft.dir/src/Utils/ResourceRandomizer.cpp.o -c /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Utils/ResourceRandomizer.cpp
 
-CMakeFiles/Minecraft.dir/src/Utils/ResourceRandomizer/ResourceRandomizer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Minecraft.dir/src/Utils/ResourceRandomizer/ResourceRandomizer.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Utils/ResourceRandomizer/ResourceRandomizer.cpp > CMakeFiles/Minecraft.dir/src/Utils/ResourceRandomizer/ResourceRandomizer.cpp.i
+CMakeFiles/Minecraft.dir/src/Utils/ResourceRandomizer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Minecraft.dir/src/Utils/ResourceRandomizer.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Utils/ResourceRandomizer.cpp > CMakeFiles/Minecraft.dir/src/Utils/ResourceRandomizer.cpp.i
 
-CMakeFiles/Minecraft.dir/src/Utils/ResourceRandomizer/ResourceRandomizer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Minecraft.dir/src/Utils/ResourceRandomizer/ResourceRandomizer.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Utils/ResourceRandomizer/ResourceRandomizer.cpp -o CMakeFiles/Minecraft.dir/src/Utils/ResourceRandomizer/ResourceRandomizer.cpp.s
+CMakeFiles/Minecraft.dir/src/Utils/ResourceRandomizer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Minecraft.dir/src/Utils/ResourceRandomizer.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Utils/ResourceRandomizer.cpp -o CMakeFiles/Minecraft.dir/src/Utils/ResourceRandomizer.cpp.s
 
 CMakeFiles/Minecraft.dir/src/main.cpp.o: CMakeFiles/Minecraft.dir/flags.make
 CMakeFiles/Minecraft.dir/src/main.cpp.o: src/main.cpp
@@ -129,7 +129,7 @@ CMakeFiles/Minecraft.dir/src/main.cpp.s: cmake_force
 Minecraft_OBJECTS = \
 "CMakeFiles/Minecraft.dir/src/Engine/Engine.cpp.o" \
 "CMakeFiles/Minecraft.dir/src/Screens/TittleScreen/MainScreen.cpp.o" \
-"CMakeFiles/Minecraft.dir/src/Utils/ResourceRandomizer/ResourceRandomizer.cpp.o" \
+"CMakeFiles/Minecraft.dir/src/Utils/ResourceRandomizer.cpp.o" \
 "CMakeFiles/Minecraft.dir/src/main.cpp.o"
 
 # External object files for target Minecraft
@@ -137,7 +137,7 @@ Minecraft_EXTERNAL_OBJECTS =
 
 Minecraft: CMakeFiles/Minecraft.dir/src/Engine/Engine.cpp.o
 Minecraft: CMakeFiles/Minecraft.dir/src/Screens/TittleScreen/MainScreen.cpp.o
-Minecraft: CMakeFiles/Minecraft.dir/src/Utils/ResourceRandomizer/ResourceRandomizer.cpp.o
+Minecraft: CMakeFiles/Minecraft.dir/src/Utils/ResourceRandomizer.cpp.o
 Minecraft: CMakeFiles/Minecraft.dir/src/main.cpp.o
 Minecraft: CMakeFiles/Minecraft.dir/build.make
 Minecraft: /usr/local/lib/libsfml-graphics.2.6.0.dylib

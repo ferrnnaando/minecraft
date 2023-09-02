@@ -1,7 +1,7 @@
-CMakeFiles/Minecraft.dir/src/Screens/TittleScreen/MainScreen.cpp.o: \
-  /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Screens/TittleScreen/MainScreen.cpp \
-  /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Screens/TittleScreen/MainScreen.h \
-  /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Screens/TittleScreen/../../header.h \
+CMakeFiles/Minecraft.dir/src/Utils/ResourceRandomizer.cpp.o: \
+  /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Utils/ResourceRandomizer.cpp \
+  /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Utils/ResourceRandomizer.h \
+  /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Utils/../header.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/__config \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/__config_site \
@@ -524,7 +524,4 @@ CMakeFiles/Minecraft.dir/src/Screens/TittleScreen/MainScreen.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/numeric \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/unordered_map \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/__hash_table \
-  /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Screens/TittleScreen/../../Utils/ResourceRandomizer.h \
-  /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Screens/TittleScreen/../../Utils/../header.h \
-  /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Screens/TittleScreen/../../Engine/Engine.h \
-  /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Screens/TittleScreen/../../Engine/../header.h
+  /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Utils/../Utils/ResourceRandomizer.h

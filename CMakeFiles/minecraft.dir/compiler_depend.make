@@ -433,7 +433,7 @@ CMakeFiles/Minecraft.dir/src/Engine/Engine.cpp.o: src/Engine/Engine.cpp \
   /Library/Developer/CommandLineTools/usr/lib/clang/14.0.0/include/stddef.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/14.0.0/include/stdint.h \
   src/header.h \
-  src/Utils/ResourceRandomizer/ResourceRandomizer.h \
+  src/Utils/ResourceRandomizer.h \
   src/header.h \
   src/Engine/Engine.h \
   /usr/local/include/SFML/Audio.hpp \
@@ -964,7 +964,7 @@ CMakeFiles/Minecraft.dir/src/Screens/TittleScreen/MainScreen.cpp.o: src/Screens/
   src/header.h \
   src/Engine/Engine.h \
   src/header.h \
-  src/Utils/ResourceRandomizer/ResourceRandomizer.h \
+  src/Utils/ResourceRandomizer.h \
   src/header.h \
   src/Screens/TittleScreen/MainScreen.h \
   /usr/local/include/SFML/Audio.hpp \
@@ -1061,7 +1061,7 @@ CMakeFiles/Minecraft.dir/src/Screens/TittleScreen/MainScreen.cpp.o: src/Screens/
   /usr/local/include/SFML/Window/WindowHandle.hpp \
   /usr/local/include/SFML/Window/WindowStyle.hpp
 
-CMakeFiles/Minecraft.dir/src/Utils/ResourceRandomizer/ResourceRandomizer.cpp.o: src/Utils/ResourceRandomizer/ResourceRandomizer.cpp \
+CMakeFiles/Minecraft.dir/src/Utils/ResourceRandomizer.cpp.o: src/Utils/ResourceRandomizer.cpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/Availability.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/AvailabilityInternal.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/AvailabilityVersions.h \
@@ -1492,9 +1492,9 @@ CMakeFiles/Minecraft.dir/src/Utils/ResourceRandomizer/ResourceRandomizer.cpp.o: 
   /Library/Developer/CommandLineTools/usr/lib/clang/14.0.0/include/stdarg.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/14.0.0/include/stddef.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/14.0.0/include/stdint.h \
-  src/Utils/ResourceRandomizer/ResourceRandomizer.h \
+  src/Utils/ResourceRandomizer.h \
   src/header.h \
-  src/Utils/ResourceRandomizer/ResourceRandomizer.h \
+  src/Utils/ResourceRandomizer.h \
   /usr/local/include/SFML/Audio.hpp \
   /usr/local/include/SFML/Audio/AlResource.hpp \
   /usr/local/include/SFML/Audio/Export.hpp \
@@ -2026,7 +2026,7 @@ CMakeFiles/Minecraft.dir/src/main.cpp.o: src/main.cpp \
   src/header.h \
   src/Screens/TittleScreen/MainScreen.h \
   src/header.h \
-  src/Utils/ResourceRandomizer/ResourceRandomizer.h \
+  src/Utils/ResourceRandomizer.h \
   src/header.h \
   /usr/local/include/SFML/Audio.hpp \
   /usr/local/include/SFML/Audio/AlResource.hpp \
@@ -2253,7 +2253,7 @@ src/Screens/TittleScreen/MainScreen.cpp:
 
 src/Engine/Engine.h:
 
-src/Utils/ResourceRandomizer/ResourceRandomizer.h:
+src/Utils/ResourceRandomizer.h:
 
 src/header.h:
 
@@ -2270,6 +2270,8 @@ src/header.h:
 /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/xlocale/_string.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/xlocale/_stdlib.h:
+
+src/Utils/ResourceRandomizer.cpp:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/xlocale/_stdio.h:
 
@@ -2306,8 +2308,6 @@ src/header.h:
 /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/sys/_types/_u_int8_t.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/sys/_types/_timespec.h:
-
-src/Utils/ResourceRandomizer/ResourceRandomizer.cpp:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/c++/v1/__utility/in_place.h:
 

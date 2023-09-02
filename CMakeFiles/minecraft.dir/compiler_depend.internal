@@ -434,7 +434,7 @@ CMakeFiles/Minecraft.dir/src/Engine/Engine.cpp.o
  /Library/Developer/CommandLineTools/usr/lib/clang/14.0.0/include/stddef.h
  /Library/Developer/CommandLineTools/usr/lib/clang/14.0.0/include/stdint.h
  /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/header.h
- /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Utils/ResourceRandomizer/ResourceRandomizer.h
+ /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Utils/ResourceRandomizer.h
  /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/header.h
  /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Engine/Engine.h
  /usr/local/include/SFML/Audio.hpp
@@ -966,7 +966,7 @@ CMakeFiles/Minecraft.dir/src/Screens/TittleScreen/MainScreen.cpp.o
  /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/header.h
  /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Engine/Engine.h
  /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/header.h
- /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Utils/ResourceRandomizer/ResourceRandomizer.h
+ /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Utils/ResourceRandomizer.h
  /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/header.h
  /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Screens/TittleScreen/MainScreen.h
  /usr/local/include/SFML/Audio.hpp
@@ -1063,8 +1063,8 @@ CMakeFiles/Minecraft.dir/src/Screens/TittleScreen/MainScreen.cpp.o
  /usr/local/include/SFML/Window/WindowHandle.hpp
  /usr/local/include/SFML/Window/WindowStyle.hpp
 
-CMakeFiles/Minecraft.dir/src/Utils/ResourceRandomizer/ResourceRandomizer.cpp.o
- /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Utils/ResourceRandomizer/ResourceRandomizer.cpp
+CMakeFiles/Minecraft.dir/src/Utils/ResourceRandomizer.cpp.o
+ /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Utils/ResourceRandomizer.cpp
  /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/Availability.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/AvailabilityInternal.h
  /Library/Developer/CommandLineTools/SDKs/MacOSX13.1.sdk/usr/include/AvailabilityVersions.h
@@ -1495,9 +1495,9 @@ CMakeFiles/Minecraft.dir/src/Utils/ResourceRandomizer/ResourceRandomizer.cpp.o
  /Library/Developer/CommandLineTools/usr/lib/clang/14.0.0/include/stdarg.h
  /Library/Developer/CommandLineTools/usr/lib/clang/14.0.0/include/stddef.h
  /Library/Developer/CommandLineTools/usr/lib/clang/14.0.0/include/stdint.h
- /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Utils/ResourceRandomizer/ResourceRandomizer.h
+ /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Utils/ResourceRandomizer.h
  /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/header.h
- /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Utils/ResourceRandomizer/ResourceRandomizer.h
+ /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Utils/ResourceRandomizer.h
  /usr/local/include/SFML/Audio.hpp
  /usr/local/include/SFML/Audio/AlResource.hpp
  /usr/local/include/SFML/Audio/Export.hpp
@@ -2030,7 +2030,7 @@ CMakeFiles/Minecraft.dir/src/main.cpp.o
  /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/header.h
  /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Screens/TittleScreen/MainScreen.h
  /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/header.h
- /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Utils/ResourceRandomizer/ResourceRandomizer.h
+ /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/Utils/ResourceRandomizer.h
  /Users/fernando/Desktop/Dev/cpp/graphics/sfml/proyects/minecraft-mainscreen/src/header.h
  /usr/local/include/SFML/Audio.hpp
  /usr/local/include/SFML/Audio/AlResource.hpp
