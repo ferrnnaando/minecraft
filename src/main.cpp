@@ -1,6 +1,7 @@
 #include "header.h"
 #include "Engine/Engine.h"
 #include "Screens/TittleScreen/MainScreen.h"
+//#include "Screens/LoadScreen/LoadScreen.h"
 
 int main() {
     constexpr int mWindow_x = 960;
@@ -10,10 +11,11 @@ int main() {
 
     Engine game(window);
     MainScreen mainMenu(window);
+    //LoadScreen loadScreen(window);
     
     while(window.isOpen()) {
-        if(mainMenu.isEnabled())
-        mainMenu.run();
+        if(mainMenu.isEnabled()) mainMenu.run();
+        //else if(LoadScreen.isEnabled()) loadScreen.run();
     }
 
     return 0x0;
