@@ -4,7 +4,7 @@
 
 class MainScreen : public Engine {
     public:
-        MainScreen(sf::RenderWindow& window);
+        MainScreen(sf::RenderWindow& window, gameState& currentState);
         ~MainScreen() {};
 
         bool isMainScreen = true;
@@ -18,6 +18,7 @@ class MainScreen : public Engine {
         virtual void render();
     
         sf::RenderWindow* mWindow;
+        gameState* currentStatus;
         
         std::string singleplayer_button_text_en = "Singleplayer";
         std::string multiplayer_button_text_en = "Multiplayer";

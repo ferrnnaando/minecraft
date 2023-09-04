@@ -17,3 +17,6 @@
 #include <memory>
 
 #include "Utils/ResourceRandomizer.h"
+
+enum class MenuWidget { Title, Subtitle, Singleplayer, Multiplayer, Settings, Quit };
+enum class gameState { Menu, Loading, SP_Gameplay, MP_Gameplay, Settings };

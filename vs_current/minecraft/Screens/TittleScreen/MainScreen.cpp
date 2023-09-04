@@ -4,8 +4,9 @@ void MainScreen::init() {
    t_background_main = Randomize_MainBackground();
 }
 
-MainScreen::MainScreen(sf::RenderWindow& window) : Engine(window) {
+MainScreen::MainScreen(sf::RenderWindow& window, gameState& currentState) : Engine(window) {
     mWindow = &window;
+    currentStatus = &currentState;
 
     init();
 
@@ -127,8 +128,9 @@ void MainScreen::userEvents() {
                          //load_clock.restart();
                          //enter_game.restart();
                          s_click.play();
-                         isMainScreen = false;
-                         isLoadScreen = true;
+                         //isMainScreen = false;
+                         //isLoadScreen = true;
+                         *currentStatus = gameState::Loading;
                      }
                  }
              }
@@ -139,8 +141,8 @@ void MainScreen::userEvents() {
                  if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
                      if (s_click.getStatus() != sf::SoundSource::Playing) {
                          s_click.play();
-                         isMainScreen = false;
-                         isSettingsScreen = true;
+                         //isMainScreen = false;
+                         //isSettingsScreen = true;
                      }
                  }
              }

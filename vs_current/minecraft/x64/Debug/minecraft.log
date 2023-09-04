@@ -1,46 +1,29 @@
-﻿  Engine.cpp
-C:\Users\ferni\Desktop\Dev\cpp\graphics\sfml\proyects\test\minecraft\vs_current\minecraft\Engine\Engine.cpp(24,246): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+﻿  LoadScreen.cpp
+C:\Users\ferni\Desktop\Dev\cpp\graphics\sfml\proyects\minecraft\vs_current\minecraft\Screens\LoadScreen\LoadScreen.h(5,27): warning C4584: 'LoadScreen': base-class 'Engine' is already a base-class of 'MainScreen'
+C:\Users\ferni\Desktop\Dev\cpp\graphics\sfml\proyects\minecraft\vs_current\minecraft\Engine\Engine.h(4,7): message : see declaration of 'Engine'
+C:\Users\ferni\Desktop\Dev\cpp\graphics\sfml\proyects\minecraft\vs_current\minecraft\Screens\TittleScreen\MainScreen.h(5,7): message : see declaration of 'MainScreen'
+  MainScreen.cpp
+C:\Users\ferni\Desktop\Dev\cpp\graphics\sfml\proyects\minecraft\vs_current\minecraft\Screens\TittleScreen\MainScreen.cpp(20,109): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\ferni\Desktop\Dev\cpp\graphics\sfml\proyects\minecraft\vs_current\minecraft\Screens\TittleScreen\MainScreen.cpp(26,178): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+          and
           [
               T=float
           ]
   main.cpp
-C:\Users\ferni\Desktop\Dev\cpp\graphics\sfml\proyects\test\minecraft\vs_current\minecraft\Screens\LoadScreen\LoadScreen.h(5,27): warning C4584: 'LoadScreen': base-class 'Engine' is already a base-class of 'MainScreen'
-C:\Users\ferni\Desktop\Dev\cpp\graphics\sfml\proyects\test\minecraft\vs_current\minecraft\Engine\Engine.h(4,7): message : see declaration of 'Engine'
-C:\Users\ferni\Desktop\Dev\cpp\graphics\sfml\proyects\test\minecraft\vs_current\minecraft\Screens\TittleScreen\MainScreen.h(5,7): message : see declaration of 'MainScreen'
-  LoadScreen.cpp
-C:\Users\ferni\Desktop\Dev\cpp\graphics\sfml\proyects\test\minecraft\vs_current\minecraft\Screens\LoadScreen\LoadScreen.h(5,27): warning C4584: 'LoadScreen': base-class 'Engine' is already a base-class of 'MainScreen'
-C:\Users\ferni\Desktop\Dev\cpp\graphics\sfml\proyects\test\minecraft\vs_current\minecraft\Engine\Engine.h(4,7): message : see declaration of 'Engine'
-C:\Users\ferni\Desktop\Dev\cpp\graphics\sfml\proyects\test\minecraft\vs_current\minecraft\Screens\TittleScreen\MainScreen.h(5,7): message : see declaration of 'MainScreen'
-  MainScreen.cpp
-C:\Users\ferni\Desktop\Dev\cpp\graphics\sfml\proyects\test\minecraft\vs_current\minecraft\Screens\TittleScreen\MainScreen.cpp(19,109): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-          and
-          [
-              T=float
-          ]
-C:\Users\ferni\Desktop\Dev\cpp\graphics\sfml\proyects\test\minecraft\vs_current\minecraft\Screens\TittleScreen\MainScreen.cpp(25,178): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-          and
-          [
-              T=float
-          ]
-  ResourceRandomizer.cpp
-C:\Users\ferni\Desktop\Dev\cpp\graphics\sfml\proyects\test\minecraft\vs_current\minecraft\Utils\ResourceRandomizer.cpp(232,69): warning C4267: 'argument': conversion from 'size_t' to '_Ty', possible loss of data
-          with
-          [
-              _Ty=int
-          ]
-C:\Users\ferni\Desktop\Dev\cpp\graphics\sfml\proyects\test\minecraft\vs_current\minecraft\Utils\ResourceRandomizer.cpp(246,66): warning C4267: 'argument': conversion from 'size_t' to '_Ty', possible loss of data
-          with
-          [
-              _Ty=int
-          ]
+C:\Users\ferni\Desktop\Dev\cpp\graphics\sfml\proyects\minecraft\vs_current\minecraft\Screens\LoadScreen\LoadScreen.h(5,27): warning C4584: 'LoadScreen': base-class 'Engine' is already a base-class of 'MainScreen'
+C:\Users\ferni\Desktop\Dev\cpp\graphics\sfml\proyects\minecraft\vs_current\minecraft\Engine\Engine.h(4,7): message : see declaration of 'Engine'
+C:\Users\ferni\Desktop\Dev\cpp\graphics\sfml\proyects\minecraft\vs_current\minecraft\Screens\TittleScreen\MainScreen.h(5,7): message : see declaration of 'MainScreen'
   Generating Code...
-  minecraft.vcxproj -> C:\Users\ferni\Desktop\Dev\cpp\graphics\sfml\proyects\test\minecraft\vs_current\x64\Debug\minecraft.exe
+  minecraft.vcxproj -> C:\Users\ferni\Desktop\Dev\cpp\graphics\sfml\proyects\minecraft\vs_current\x64\Debug\minecraft.exe

@@ -1,7 +1,8 @@
 #include "LoadScreen.h"
 
-LoadScreen::LoadScreen(sf::RenderWindow& window) : Engine(window), MainScreen(window) {
+LoadScreen::LoadScreen(sf::RenderWindow& window, gameState& currentState) : Engine(window), MainScreen(window, currentState) {
 	mWindow = &window;
+	currentStatus = &currentState;
 }
 
 void LoadScreen::init() {
@@ -26,8 +27,8 @@ void LoadScreen::update() {
 }
 
 void LoadScreen::render() {
-		mWindow->clear();
-		mWindow->display();
+	mWindow->clear();
+	mWindow->display();
 }
 
 void LoadScreen::run() {

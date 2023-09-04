@@ -4,7 +4,6 @@
 class Engine {
     public:
         Engine(sf::RenderWindow& window);
-        bool isMainScreen = true, isLoadScreen = false, isSettingsScreen = true;
 
     protected:
         sf::RenderWindow* mWindow;

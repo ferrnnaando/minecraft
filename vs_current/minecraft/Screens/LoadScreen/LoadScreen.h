@@ -4,7 +4,7 @@
 
 class LoadScreen : public Engine, public MainScreen {
     public:
-        LoadScreen(sf::RenderWindow& window);
+        LoadScreen(sf::RenderWindow& window, gameState& currentState);
         ~LoadScreen() {};
 
         bool isLoadScreen = false;
@@ -12,6 +12,7 @@ class LoadScreen : public Engine, public MainScreen {
 
     private:
         sf::RenderWindow* mWindow;
+        gameState* currentStatus;
 
         void init() override;
         void windowEvents() override;

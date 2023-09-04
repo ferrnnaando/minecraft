@@ -4,18 +4,31 @@
 #include "Screens/LoadScreen/LoadScreen.h"
 
 int main() {
-    constexpr int mWindow_x = 960;
-    constexpr int mWindow_y = 540;
+    constexpr static int mWindow_x = 960;
+    constexpr static int mWindow_y = 540;
 
     sf::RenderWindow window(sf::VideoMode(mWindow_x, mWindow_y), "Minecraft", sf::Style::Close);
 
+    gameState currentState = gameState::Menu;
+
     Engine game(window);
-    MainScreen mainMenu(window);
-    LoadScreen loadScreen(window);
+    MainScreen mainMenu(window, currentState);
+    LoadScreen loadScreen(window, currentState);
 
     while (window.isOpen()) {
-        if (mainMenu.isMainScreen) mainMenu.run();
-        else if(loadScreen.isLoadScreen) loadScreen.run(); 
+
+        switch (currentState) {
+            case gameState::Menu:
+                mainMenu.run();
+                break;
+            case gameState::Loading:
+                loadScreen.run();
+                break;
+            case gameState::SP_Gameplay:
+                break;
+            default:
+                break;
+        }
     }
 
     return 0x0;
