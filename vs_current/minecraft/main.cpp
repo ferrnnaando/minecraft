@@ -16,16 +16,18 @@ int main() {
     LoadScreen loadScreen(window, currentState);
 
     while (window.isOpen()) {
-
         switch (currentState) {
             case gameState::Menu:
                 mainMenu.run();
                 break;
+
             case gameState::Loading:
                 loadScreen.run();
                 break;
+
             case gameState::SP_Gameplay:
                 break;
+
             default:
                 break;
         }

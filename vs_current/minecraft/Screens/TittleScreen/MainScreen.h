@@ -7,15 +7,14 @@ class MainScreen : public Engine {
         MainScreen(sf::RenderWindow& window, gameState& currentState);
         ~MainScreen() {};
 
-        bool isMainScreen = true;
         void run() override;
         
     private:
         void init() override;
-        virtual void windowEvents();
-        virtual void userEvents();
-        virtual void update();
-        virtual void render();
+        void windowEvents();
+        void userEvents();
+        void update();
+        void render();
     
         sf::RenderWindow* mWindow;
         gameState* currentStatus;
@@ -31,5 +30,4 @@ class MainScreen : public Engine {
 
         bool isMessage_increasing = true;
         float randomMessage_speedScale = 0.005f;
-  
 };

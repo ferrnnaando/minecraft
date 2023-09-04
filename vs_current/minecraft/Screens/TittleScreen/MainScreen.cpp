@@ -115,34 +115,28 @@ void MainScreen::userEvents() {
     }
 
      if(mWindow->hasFocus()) {
-         if(isMainScreen) {
+         if(*currentStatus == gameState::Menu) {
              if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape) && sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
 
-             }
-             else if (s_button_singleplayer.getGlobalBounds().contains(mousePos_relative)) {
+             } else if (s_button_singleplayer.getGlobalBounds().contains(mousePos_relative)) {
                  mWindow->setMouseCursor(c_hand);
                  s_button_singleplayer.setColor(buttons_hoverColor);
                  txt_content_singleplayer.setFillColor(sf::Color(254, 255, 169));
                  if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
                      if (s_click.getStatus() != sf::SoundSource::Playing) {
-                         //load_clock.restart();
-                         //enter_game.restart();
                          s_click.play();
-                         //isMainScreen = false;
-                         //isLoadScreen = true;
                          *currentStatus = gameState::Loading;
+                         return;
                      }
                  }
-             }
-             else if (s_button_settings.getGlobalBounds().contains(mousePos_relative)) {
+             } else if (s_button_settings.getGlobalBounds().contains(mousePos_relative)) {
                  mWindow->setMouseCursor(c_hand);
                  s_button_settings.setColor(buttons_hoverColor);
                  txt_content_settings.setFillColor(sf::Color(254, 255, 169));
                  if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
                      if (s_click.getStatus() != sf::SoundSource::Playing) {
                          s_click.play();
-                         //isMainScreen = false;
-                         //isSettingsScreen = true;
+                         return;
                      }
                  }
              }
@@ -154,6 +148,7 @@ void MainScreen::userEvents() {
                      if (s_click.getStatus() != sf::SoundSource::Playing) {
                          s_click.play();
                          mWindow->close();
+                         return;
                      }
                  }
              }
@@ -165,6 +160,7 @@ void MainScreen::userEvents() {
                  s_button_quit.setColor(sf::Color::White);
                  txt_content_quit.setFillColor(sf::Color::White);
                  mWindow->setMouseCursor(c_default);
+                 return;
              }
          }
          /*else if (settingsScreen) {
@@ -235,7 +231,7 @@ void MainScreen::update() {
 }
 
 void MainScreen::render() {
-    if(isMainScreen) {
+    if(*currentStatus == gameState::Menu) {
         mWindow->clear();
         mWindow->setView(mWindow->getDefaultView());
         mWindow->draw(s_background_main);
@@ -255,8 +251,9 @@ void MainScreen::render() {
         mWindow->draw(txt_content_settings);
         mWindow->draw(s_button_quit);
         mWindow->draw(txt_content_quit);
+
+        mWindow->display();
     }
-    mWindow->display();
 }
 
 void MainScreen::run() {

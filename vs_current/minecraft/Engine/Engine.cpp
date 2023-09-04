@@ -2,7 +2,6 @@
 
 Engine::Engine(sf::RenderWindow& window) {
     mWindow = &window;
-
     mWindow->requestFocus();
     mWindow->setActive(true);
     mWindow->setVisible(true);

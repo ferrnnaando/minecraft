@@ -4,9 +4,11 @@
 class Engine {
     public:
         Engine(sf::RenderWindow& window);
+        ~Engine() {};
 
     protected:
         sf::RenderWindow* mWindow;
+
         virtual void run() {};
         virtual void init();
 
@@ -18,6 +20,7 @@ class Engine {
 
         std::string game_version = "Minecraft 1.20.1";
         std::string game_disclaimer = "Not Mojang AB. Can distribute!";
+
         sf::Image ico_app;
         sf::Music m_C418;
         sf::SoundBuffer sb_click;
@@ -70,9 +73,4 @@ class Engine {
         sf::Texture t_background_game_view;
         sf::Sprite s_grass_block, s_dirt_block, s_stone_block, s_bedrock_block, s_singleplayer_background_viewscreen;
 
-        std::string random_message();
-        void init();
-        void processWindowEvents();
-        void update();
-        void render();
 };  */
