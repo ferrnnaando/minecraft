@@ -15,7 +15,7 @@ int main() {
 
     while (window.isOpen()) {
         if (mainMenu.isMainScreen) mainMenu.run();
-        else if(loadScreen.isLoadScreen) loadScreen.run();
+        else if(loadScreen.isLoadScreen) loadScreen.run(); 
     }
 
     return 0x0;
