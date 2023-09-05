@@ -27,7 +27,7 @@ class LoadScreen : public Engine {
 
         sf::Clock load_clock, enter_game;
 
-        float totalLoadTime = 13.5f;
+        float totalLoadTime = 4.5f;
         float currentTime = 0.0f;
         sf::Text txt_load_status;
         std::string load_process_info;

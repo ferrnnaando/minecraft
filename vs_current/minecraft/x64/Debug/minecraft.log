@@ -1,5 +1,14 @@
-﻿  LoadScreen.cpp
-C:\Users\ferni\Desktop\Dev\cpp\graphics\sfml\proyects\minecraft\vs_current\minecraft\Screens\LoadScreen\LoadScreen.cpp(18,147): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+﻿  MainScreen.cpp
+C:\Users\ferni\Desktop\Dev\cpp\graphics\sfml\proyects\minecraft\vs_current\minecraft\Screens\TittleScreen\MainScreen.cpp(56,109): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\ferni\Desktop\Dev\cpp\graphics\sfml\proyects\minecraft\vs_current\minecraft\Screens\TittleScreen\MainScreen.cpp(62,178): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=unsigned int

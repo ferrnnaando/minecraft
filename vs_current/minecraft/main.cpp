@@ -33,6 +33,7 @@ int main() {
                 break;
 
             default:
+                window.close();
                 break;
         }
     }
