@@ -4,3 +4,4 @@
 
 std::string_view Randomize_SlashMessage();
 sf::Texture Randomize_MainBackground();
+void open_web(const std::string url);

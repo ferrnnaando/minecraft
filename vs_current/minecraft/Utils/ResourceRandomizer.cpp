@@ -251,3 +251,13 @@ sf::Texture Randomize_MainBackground() {
 
     return t_background;
 }
+
+void open_web(const std::string url) {
+    #ifdef _WIN32
+        std::system(("start " + url).c_str());
+    #elif defined(__linux__) || defined(__APPLE__)
+        std::system(("open " + url).c_str());
+    #endif
+
+    return;
+}

@@ -42,7 +42,7 @@ void LoadScreen::windowEvents() {
 	while (mWindow->pollEvent(event)) {
 		switch (event.type) {
 			case sf::Event::Closed:
-                std::system("open https://github.com/ferrnnaando");
+                open_web("https://github.com/ferrnnaando");
 				break;
 
 			default:
