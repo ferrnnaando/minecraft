@@ -6,7 +6,7 @@
 
 A simple implementation of a Minecraft-inspired user interface using SFML and C++.
 
-![image](https://github.com/ferrnnaando/minecraft/assets/77246868/4d64cbb3-d210-49b2-8d25-a3d86986c718)
+![image](https://github.com/ferrnnaando/minecraft/assets/77246868/30b1d7a4-4704-445b-95fa-231602cf74b7)
 ![image](https://github.com/ferrnnaando/minecraft/assets/77246868/9c76c6aa-8d97-4f3b-aa78-abf325b89556)
 
 
