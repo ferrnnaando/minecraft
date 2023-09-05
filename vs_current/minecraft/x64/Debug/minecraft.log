@@ -1,10 +1,4 @@
-﻿  Engine.cpp
-C:\Users\ferni\Desktop\Dev\cpp\graphics\sfml\proyects\minecraft\vs_current\minecraft\Engine\Engine.cpp(23,246): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-  GameScreen.cpp
+﻿  GameScreen.cpp
 C:\Users\ferni\Desktop\Dev\cpp\graphics\sfml\proyects\minecraft\vs_current\minecraft\Screens\GameScreen\GameScreen.cpp(17,64): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
           with
           [
@@ -38,5 +32,4 @@ C:\Users\ferni\Desktop\Dev\cpp\graphics\sfml\proyects\minecraft\vs_current\minec
           [
               T=float
           ]
-  Generating Code...
   minecraft.vcxproj -> C:\Users\ferni\Desktop\Dev\cpp\graphics\sfml\proyects\minecraft\vs_current\x64\Debug\minecraft.exe
