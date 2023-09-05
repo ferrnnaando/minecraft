@@ -1,6 +1,7 @@
 #include "GameScreen.h"
 
 void GameScreen::init() {
+	if (!t_background_game_view.loadFromFile("assets/images/backgrounds/SM_Background.png")) mWindow->close();
 	if (!t_atlas.loadFromFile("assets/images/atlas/texture_atlas.png")) mWindow->close();
 
 	return;

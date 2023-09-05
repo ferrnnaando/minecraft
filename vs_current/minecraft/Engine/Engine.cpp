@@ -25,14 +25,12 @@ Engine::Engine(sf::RenderWindow& window) {
 
 void Engine::init() {
     if(!ico_app.loadFromFile("assets/images/icon_app.jpeg")) mWindow->close(); //radical quit
-    //music
     if(!sb_click.loadFromFile("assets/sounds/effects/click.mp3")) mWindow->close();
     if(!c_hand.loadFromSystem(sf::Cursor::Hand)) mWindow->close();
     if(!c_default.loadFromSystem(sf::Cursor::Arrow)) mWindow->close();
     if(!t_button.loadFromFile("assets/images/button.jpg")) mWindow->close();
     if(!f_regular.loadFromFile("assets/fonts/regular.otf")) mWindow->close(); 
     if(!f_title1.loadFromFile("assets/fonts/title1.ttf")) mWindow->close();
-
     if(!t_maintittle.loadFromFile("assets/images/title.png")) mWindow->close();
     if(!t_copyright_editon.loadFromFile("assets/images/edition_copyright.png")) mWindow->close();
 }
