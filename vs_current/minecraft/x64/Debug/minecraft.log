@@ -1,12 +1,15 @@
-﻿  Engine.cpp
-C:\Users\ferni\Desktop\Dev\cpp\graphics\sfml\proyects\minecraft\vs_current\minecraft\Engine\Engine.cpp(23,246): warning C4244: 'argument': conversion from 'double' to 'T', possible loss of data
+﻿  GameScreen.cpp
+C:\Users\ferni\Desktop\Dev\cpp\graphics\sfml\proyects\minecraft\vs_current\minecraft\Screens\GameScreen\GameScreen.cpp(16,64): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
           with
           [
-              T=float
+              T=unsigned int
           ]
-  main.cpp
-  LoadScreen.cpp
-C:\Users\ferni\Desktop\Dev\cpp\graphics\sfml\proyects\minecraft\vs_current\minecraft\Screens\LoadScreen\LoadScreen.cpp(15,147): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\ferni\Desktop\Dev\cpp\graphics\sfml\proyects\minecraft\vs_current\minecraft\Screens\GameScreen\GameScreen.cpp(16,38): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+C:\Users\ferni\Desktop\Dev\cpp\graphics\sfml\proyects\minecraft\vs_current\minecraft\Screens\GameScreen\GameScreen.cpp(24,54): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=unsigned int
@@ -15,8 +18,7 @@ C:\Users\ferni\Desktop\Dev\cpp\graphics\sfml\proyects\minecraft\vs_current\minec
           [
               T=float
           ]
-  MainScreen.cpp
-C:\Users\ferni\Desktop\Dev\cpp\graphics\sfml\proyects\minecraft\vs_current\minecraft\Screens\TittleScreen\MainScreen.cpp(20,109): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\ferni\Desktop\Dev\cpp\graphics\sfml\proyects\minecraft\vs_current\minecraft\Screens\GameScreen\GameScreen.cpp(26,61): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=unsigned int
@@ -25,25 +27,9 @@ C:\Users\ferni\Desktop\Dev\cpp\graphics\sfml\proyects\minecraft\vs_current\minec
           [
               T=float
           ]
-C:\Users\ferni\Desktop\Dev\cpp\graphics\sfml\proyects\minecraft\vs_current\minecraft\Screens\TittleScreen\MainScreen.cpp(26,178): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\ferni\Desktop\Dev\cpp\graphics\sfml\proyects\minecraft\vs_current\minecraft\Screens\GameScreen\GameScreen.cpp(81,22): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
           with
-          [
-              T=unsigned int
-          ]
-          and
           [
               T=float
           ]
-  ResourceRandomizer.cpp
-C:\Users\ferni\Desktop\Dev\cpp\graphics\sfml\proyects\minecraft\vs_current\minecraft\Utils\ResourceRandomizer.cpp(232,69): warning C4267: 'argument': conversion from 'size_t' to '_Ty', possible loss of data
-          with
-          [
-              _Ty=int
-          ]
-C:\Users\ferni\Desktop\Dev\cpp\graphics\sfml\proyects\minecraft\vs_current\minecraft\Utils\ResourceRandomizer.cpp(246,66): warning C4267: 'argument': conversion from 'size_t' to '_Ty', possible loss of data
-          with
-          [
-              _Ty=int
-          ]
-  Generating Code...
   minecraft.vcxproj -> C:\Users\ferni\Desktop\Dev\cpp\graphics\sfml\proyects\minecraft\vs_current\x64\Debug\minecraft.exe

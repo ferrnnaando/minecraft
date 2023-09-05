@@ -243,7 +243,7 @@ sf::Texture Randomize_MainBackground() {
 
     std::random_device rd;
     std::mt19937 gen(rd());
-    std::uniform_int_distribution<int> distribution(0, paths.size());
+    std::uniform_int_distribution<int> distribution(0, 7);
     int random = distribution(gen);
 
     sf::Texture t_background;

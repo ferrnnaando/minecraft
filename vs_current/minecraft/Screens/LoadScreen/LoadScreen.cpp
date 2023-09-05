@@ -1,12 +1,15 @@
 #include "LoadScreen.h"
 
 void LoadScreen::init() {
+    if (!t_background_singleplayer_loading.loadFromFile("assets/images/backgrounds/loading_singleplayer.png")) mWindow->close();
 
+    return;
 }
 
-LoadScreen::LoadScreen(sf::RenderWindow& window, gameState& currentState) : Engine(window) {
+LoadScreen::LoadScreen(sf::RenderWindow& window, gameState& currentState, LoadState& loadStatus) : Engine(window) {
 	mWindow = &window;
 	currentStatus = &currentState;
+    canLoad = &loadStatus;
 
 	init();
 
@@ -32,8 +35,6 @@ LoadScreen::LoadScreen(sf::RenderWindow& window, gameState& currentState) : Engi
     txt_load_status.setPosition(sf::Vector2f(loadoverworld_total.getSize().x / 2 - txt_load_status.getGlobalBounds().width / 2, loadoverworld_total.getGlobalBounds().getPosition().y - 25.0f));
     txt_load_status.setOutlineThickness(1);
     txt_load_status.setOutlineColor(sf::Color(0, 0, 0));
-
-    load_clock.restart();
 }
 
 void LoadScreen::windowEvents() {
@@ -41,7 +42,7 @@ void LoadScreen::windowEvents() {
 	while (mWindow->pollEvent(event)) {
 		switch (event.type) {
 			case sf::Event::Closed:
-				mWindow->close();
+                std::system("open https://github.com/ferrnnaando");
 				break;
 
 			default:
@@ -51,8 +52,8 @@ void LoadScreen::windowEvents() {
 }
 
 void LoadScreen::update() {
+   // if (*currentStatus == gameState::Loading && *canLoad == LoadState::ls_true) {
     mWindow->setMouseCursor(c_default);
-
     sf::Time elapsedTime = load_clock.restart();
     currentTime += elapsedTime.asSeconds();
     float progress = currentTime / totalLoadTime;
@@ -80,8 +81,9 @@ void LoadScreen::update() {
         if (enter_game.getElapsedTime().asSeconds() >= 0.f) {
             load_clock.restart();
             loadoverwold_process.setSize(sf::Vector2f(0.0f, 13.0f));
-            *currentStatus = gameState::Menu;
+            *currentStatus = gameState::SP_Gameplay;
         }
+    //}
     }
 }
 

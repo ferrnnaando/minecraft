@@ -2,11 +2,14 @@
 
 void MainScreen::init() {
    t_background_main = Randomize_MainBackground();
+
+   return;
 }
 
-MainScreen::MainScreen(sf::RenderWindow& window, gameState& currentState) : Engine(window) {
+MainScreen::MainScreen(sf::RenderWindow& window, gameState& currentState, LoadState& loadStatus) : Engine(window) {
     mWindow = &window;
     currentStatus = &currentState;
+    canLoad = &loadStatus;
 
     init();
 
@@ -88,22 +91,17 @@ void MainScreen::windowEvents() {
     while(mWindow->pollEvent(event)) {
         switch(event.type) {
             case sf::Event::Closed:
-                mWindow->close();
                 break;
 
             default:
                 break;
         }
     }
+
+    return;
 }
 
 void MainScreen::userEvents() {
-    mousePos_absolute = sf::Mouse::getPosition(*mWindow);
-    mousePos_relative = mWindow->mapPixelToCoords(mousePos_absolute);
-
-    gridSizeX = mWindow->getSize().x / 16;
-    gridSizeY = mWindow->getSize().y / 16;
-
     if(isMessage_increasing) {
         txt_random_message.scale(1 + randomMessage_speedScale * 0.3f, 1 + randomMessage_speedScale * 0.3f);
     } else {
@@ -115,6 +113,12 @@ void MainScreen::userEvents() {
     }
 
      if(mWindow->hasFocus()) {
+         mousePos_absolute = sf::Mouse::getPosition(*mWindow);
+         mousePos_relative = mWindow->mapPixelToCoords(mousePos_absolute);
+
+         gridSizeX = mWindow->getSize().x / 16;
+         gridSizeY = mWindow->getSize().y / 16;
+
          if(*currentStatus == gameState::Menu) {
              if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape) && sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
 
@@ -125,6 +129,7 @@ void MainScreen::userEvents() {
                  if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
                      if (s_click.getStatus() != sf::SoundSource::Playing) {
                          s_click.play();
+                        // *canLoad = LoadState::ls_true;
                          *currentStatus = gameState::Loading;
                          return;
                      }
@@ -228,6 +233,7 @@ void MainScreen::userEvents() {
 
 void MainScreen::update() {
 
+    return;
 }
 
 void MainScreen::render() {
@@ -254,6 +260,8 @@ void MainScreen::render() {
 
         mWindow->display();
     }
+
+    return;
 }
 
 void MainScreen::run() {
@@ -261,4 +269,6 @@ void MainScreen::run() {
     userEvents();
     update();
     render();
+
+    return;
 }

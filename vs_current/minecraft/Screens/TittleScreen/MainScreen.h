@@ -4,7 +4,7 @@
 
 class MainScreen : public Engine {
     public:
-        MainScreen(sf::RenderWindow& window, gameState& currentState);
+        MainScreen(sf::RenderWindow& window, gameState& currentState, LoadState& loadStatus);
         ~MainScreen() {};
 
         void run() override;
@@ -18,6 +18,7 @@ class MainScreen : public Engine {
     
         sf::RenderWindow* mWindow;
         gameState* currentStatus;
+        LoadState* canLoad;
         
         std::string singleplayer_button_text_en = "Singleplayer";
         std::string multiplayer_button_text_en = "Multiplayer";

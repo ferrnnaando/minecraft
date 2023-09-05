@@ -30,6 +30,9 @@
     <ClCompile Include="Screens\LoadScreen\LoadScreen.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Screens\GameScreen\GameScreen.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Engine\Engine.h">
@@ -47,8 +50,73 @@
     <ClInclude Include="header.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Screens\GameScreen\GameScreen.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\.gitignore" />
+    <None Include="assets\images\backgrounds\.DS_Store" />
+    <None Include="assets\images\.DS_Store" />
+    <None Include="assets\.DS_Store" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets\images\title.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\images\backgrounds\loading_singleplayer.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\images\backgrounds\mainScreen_0.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\images\backgrounds\mainScreen_1.jpeg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\images\backgrounds\mainScreen_2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\images\backgrounds\mainScreen_3.jpeg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\images\backgrounds\mainScreen_4.jpeg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\images\backgrounds\mainScreen_5.jpeg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\images\backgrounds\mainScreen_6.jpeg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\images\backgrounds\mainScreen_7.jpeg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\images\backgrounds\settings_screen.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\images\backgrounds\singleplayer_background.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\images\button.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\images\button_template.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\images\edition_copyright.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\images\icon_app.jpeg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\images\language.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\images\steve.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="assets\images\texture_atlas.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

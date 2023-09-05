@@ -137,6 +137,7 @@
   <ItemGroup>
     <ClCompile Include="Engine\Engine.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Screens\GameScreen\GameScreen.cpp" />
     <ClCompile Include="Screens\LoadScreen\LoadScreen.cpp" />
     <ClCompile Include="Screens\TittleScreen\MainScreen.cpp" />
     <ClCompile Include="Utils\ResourceRandomizer.cpp" />
@@ -144,12 +145,37 @@
   <ItemGroup>
     <ClInclude Include="Engine\Engine.h" />
     <ClInclude Include="header.h" />
+    <ClInclude Include="Screens\GameScreen\GameScreen.h" />
     <ClInclude Include="Screens\LoadScreen\LoadScreen.h" />
     <ClInclude Include="Screens\TittleScreen\MainScreen.h" />
     <ClInclude Include="Utils\ResourceRandomizer.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\.gitignore" />
+    <None Include="assets\.DS_Store" />
+    <None Include="assets\images\.DS_Store" />
+    <None Include="assets\images\backgrounds\.DS_Store" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets\images\backgrounds\loading_singleplayer.png" />
+    <Image Include="assets\images\backgrounds\mainScreen_0.jpg" />
+    <Image Include="assets\images\backgrounds\mainScreen_1.jpeg" />
+    <Image Include="assets\images\backgrounds\mainScreen_2.png" />
+    <Image Include="assets\images\backgrounds\mainScreen_3.jpeg" />
+    <Image Include="assets\images\backgrounds\mainScreen_4.jpeg" />
+    <Image Include="assets\images\backgrounds\mainScreen_5.jpeg" />
+    <Image Include="assets\images\backgrounds\mainScreen_6.jpeg" />
+    <Image Include="assets\images\backgrounds\mainScreen_7.jpeg" />
+    <Image Include="assets\images\backgrounds\settings_screen.png" />
+    <Image Include="assets\images\backgrounds\singleplayer_background.png" />
+    <Image Include="assets\images\button.jpg" />
+    <Image Include="assets\images\button_template.png" />
+    <Image Include="assets\images\edition_copyright.png" />
+    <Image Include="assets\images\icon_app.jpeg" />
+    <Image Include="assets\images\language.png" />
+    <Image Include="assets\images\steve.png" />
+    <Image Include="assets\images\texture_atlas.png" />
+    <Image Include="assets\images\title.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

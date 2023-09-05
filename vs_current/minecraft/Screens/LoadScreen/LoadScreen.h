@@ -1,10 +1,11 @@
+#pragma once
 #include "../../header.h"
 #include "../../Engine/Engine.h"
 #include "../TittleScreen/MainScreen.h"
 
 class LoadScreen : public Engine {
     public:
-        LoadScreen(sf::RenderWindow& window, gameState& currentState);
+        LoadScreen(sf::RenderWindow& window, gameState& currentState, LoadState& loadStatus);
         ~LoadScreen() {};
 
         void run() override;
@@ -17,6 +18,7 @@ class LoadScreen : public Engine {
 
         sf::RenderWindow* mWindow;
         gameState* currentStatus;
+        LoadState* canLoad;
 
         sf::Texture t_background_singleplayer_loading;
         sf::Sprite s_background_singleplayer_loading;

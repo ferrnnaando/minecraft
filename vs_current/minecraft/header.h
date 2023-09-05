@@ -20,3 +20,4 @@
 
 enum class MenuWidget { Title, Subtitle, Singleplayer, Multiplayer, Settings, Quit };
 enum class gameState { Menu, Loading, SP_Gameplay, MP_Gameplay, Settings };
+enum class LoadState { ls_true, ls_false };
