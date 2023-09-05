@@ -25,6 +25,3 @@ This project is a small-scale implementation of a Minecraft-inspired user interf
 ## Screenshots
 
 ![image](https://github.com/ferrnnaando/minecraft/assets/77246868/2833b208-a87a-4fd1-8ca4-1f94f7ecedee)
-
-
-## TODO List
