@@ -1,6 +1,13 @@
 #pragma once
-#include "../../header.h"
+#include <SFML/System.hpp>
+#include <SFML/Window.hpp>
+#include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
+#include <string>
+#include <random>
+
 #include "../../Engine/Engine.h"
+#include "../../header.h"
 
 class GameScreen : public Engine {
 	public:
@@ -17,7 +24,6 @@ class GameScreen : public Engine {
 
 		sf::View view;
 
-		sf::RenderWindow* mWindow;
 		gameState* currentStatus;
 		LoadState* canLoad;
 

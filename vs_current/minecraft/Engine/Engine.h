@@ -1,5 +1,9 @@
 #pragma once
-#include "../header.h"
+#include <SFML/System.hpp>
+#include <SFML/Window.hpp>
+#include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
+#include <string>
 
 class Engine {
     public:

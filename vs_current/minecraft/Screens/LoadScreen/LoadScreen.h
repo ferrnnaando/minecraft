@@ -1,5 +1,10 @@
 #pragma once
-#include "../../header.h"
+#include <SFML/System.hpp>
+#include <SFML/Window.hpp>
+#include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
+#include <string>
+
 #include "../../Engine/Engine.h"
 #include "../TittleScreen/MainScreen.h"
 
@@ -16,7 +21,6 @@ class LoadScreen : public Engine {
         void update(); //override;
         void render(); //override;
 
-        sf::RenderWindow* mWindow;
         gameState* currentStatus;
         LoadState* canLoad;
 

@@ -1,5 +1,11 @@
 #pragma once
-#include "../../header.h"
+#include <SFML/System.hpp>
+#include <SFML/Window.hpp>
+#include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
+#include <string>
+
+#include "../../Utils/ResourceRandomizer.h"
 #include "../../Engine/Engine.h"
 
 class MainScreen : public Engine {
@@ -16,7 +22,6 @@ class MainScreen : public Engine {
         void update();
         void render();
     
-        sf::RenderWindow* mWindow;
         gameState* currentStatus;
         LoadState* canLoad;
         

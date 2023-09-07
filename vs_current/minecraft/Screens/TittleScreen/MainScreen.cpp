@@ -7,7 +7,6 @@ void MainScreen::init() {
 }
 
 MainScreen::MainScreen(sf::RenderWindow& window, gameState& currentState, LoadState& loadStatus) : Engine(window) {
-    mWindow = &window;
     currentStatus = &currentState;
     canLoad = &loadStatus;
 

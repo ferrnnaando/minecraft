@@ -1,12 +1,14 @@
-#include "header.h"
+//c++20
+#include <SFML/Graphics.hpp>
+
 #include "Engine/Engine.h"
 #include "Screens/TittleScreen/MainScreen.h"
 #include "Screens/LoadScreen/LoadScreen.h"
 #include "Screens/GameScreen/GameScreen.h"
 
 int main() {
-    constexpr static int mWindow_x = 960;
-    constexpr static int mWindow_y = 540;
+    constexpr int mWindow_x = 960;
+    constexpr int mWindow_y = 540;
 
     sf::RenderWindow window(sf::VideoMode(mWindow_x, mWindow_y), "Minecraft", sf::Style::Close);
 
@@ -14,14 +16,14 @@ int main() {
     LoadState loadStatus = LoadState::ls_false;
 
     Engine game(window);
-    MainScreen mainMenu(window, currentState, loadStatus);
+    MainScreen menuScreen(window, currentState, loadStatus);
     LoadScreen loadScreen(window, currentState, loadStatus);
     GameScreen gameScreen(window, currentState, loadStatus);
 
     while (window.isOpen()) {
         switch (currentState) {
             case gameState::Menu:
-                mainMenu.run();
+                menuScreen.run();
                 break;
 
             case gameState::Loading:
